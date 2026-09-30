@@ -42,7 +42,7 @@ export function Hero() {
             </div>
           </div>
           <div className="hero-fade-up hero-delay-4 mt-10 flex flex-wrap items-center gap-7">
-            <Button className="rounded-full bg-hot-pink px-7 font-extrabold tracking-wide text-deep-green shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-golden-yellow hover:text-deep-green" href="#race">
+            <Button className="rounded-full bg-hot-pink px-7 font-extrabold tracking-wide !text-white shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-golden-yellow hover:!text-white" href="#race">
               {site.labels.heroAction} <ArrowIcon className="ml-3 h-5 w-5" />
             </Button>
             <a className="focus-ring group inline-flex items-center gap-3 font-semibold text-off-white transition-colors duration-300 hover:text-golden-yellow" href="#about">

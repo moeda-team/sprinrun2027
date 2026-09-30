@@ -27,7 +27,7 @@ export function Header() {
           >
             {site.navigation.map((item) => (
               <Link
-                className="focus-ring block rounded px-3 py-2 text-sm text-off-white hover:bg-white/10"
+                className="focus-ring block rounded px-3 py-2 text-sm font-semibold text-off-white hover:bg-white/10"
                 href={item.href}
                 key={item.href}
               >
@@ -36,10 +36,10 @@ export function Header() {
             ))}
           </nav>
         </details>
-        <nav aria-label="Navigasi utama" className="hidden items-center gap-5 lg:gap-7 md:flex">
+        <nav aria-label="Navigasi utama" className="hidden items-center gap-12 lg:gap-16 md:flex">
             {site.navigation.map((item) => (
               <Link
-              className="focus-ring text-sm font-medium text-off-white/85 transition-colors hover:text-golden-yellow"
+              className="focus-ring text-sm font-semibold text-off-white/85 transition-colors hover:text-golden-yellow"
               href={item.href}
               key={item.href}
             >
