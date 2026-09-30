@@ -7,7 +7,7 @@ function ArrowIcon() {
 
 export function EventHighlightsSection() {
   return (
-    <section id="about" className="bg-white text-deep-green">
+    <section id="about" className="bg-white pb-16 text-deep-green sm:pb-24">
       <Container className="px-0 sm:px-6 lg:px-8">
         <div className="grid overflow-hidden lg:min-h-[620px] lg:grid-cols-[1.15fr_0.85fr]">
           <div className="relative min-h-[360px] bg-deep-green sm:min-h-[480px] lg:min-h-full">

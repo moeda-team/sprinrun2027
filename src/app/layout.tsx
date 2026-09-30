@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 import { site } from '@/config/site';
 import './globals.css';
+import 'leaflet/dist/leaflet.css';
 
 export const metadata: Metadata = {
   title: { default: site.name, template: `%s | ${site.name}` },
