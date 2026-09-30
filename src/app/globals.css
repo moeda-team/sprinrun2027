@@ -32,6 +32,10 @@ body {
 .font-display {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+.font-display,
+.hero-title {
+  font-synthesis: none;
+}
 .hero-title {
   font-family: 'Arial Narrow', 'Roboto Condensed', Arial, sans-serif;
   font-stretch: condensed;
