@@ -6,11 +6,11 @@
   --color-ink: #0a4526;
   --color-paper: #f4fbf6;
   --color-line: #cdebd6;
-  --color-accent: #f0509b;
+  --color-accent: #cc286f;
   --color-forest-green: #0f5c34;
   --color-deep-green: #0a4526;
-  --color-hot-pink: #f0509b;
-  --color-golden-yellow: #f2c230;
+  --color-night-green: #062b19;
+  --color-hot-pink: #cc286f;
   --color-off-white: #f4fbf6;
   --color-soft-mint: #cdebd6;
   --color-blush-pink: #f7c6d9;
@@ -58,6 +58,12 @@ body {
 }
 .route-map-tiles {
   filter: grayscale(0.9) brightness(1.12) contrast(0.88);
+}
+.route-section {
+  background:
+    radial-gradient(70% 100% at 100% 0%, rgb(204 40 111 / 16%), transparent 48%),
+    linear-gradient(135deg, rgb(6 43 25 / 98%), var(--color-night-green) 52%, var(--color-deep-green));
+  box-shadow: inset 0 1px rgb(244 251 246 / 8%), inset 0 -7rem 9rem rgb(6 43 25 / 55%);
 }
 @media (prefers-reduced-motion: reduce) {
   *,

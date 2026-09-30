@@ -18,16 +18,16 @@ export function Header() {
           />
         </Link>
         <details className="relative md:hidden">
-          <summary className="focus-ring cursor-pointer list-none rounded-full border border-white/40 px-4 py-2 text-sm font-semibold">
+          <summary className="focus-ring cursor-pointer list-none rounded-full border border-off-white/40 px-4 py-2 text-sm font-semibold">
             {site.labels.menu}
           </summary>
           <nav
             aria-label="Navigasi utama"
-            className="absolute right-0 top-12 z-10 min-w-48 rounded-2xl border border-white/15 bg-deep-green p-3 shadow-xl"
+            className="absolute right-0 top-12 z-10 min-w-48 rounded-2xl border border-off-white/15 bg-deep-green p-3 shadow-xl"
           >
             {site.navigation.map((item) => (
               <Link
-                className="focus-ring block rounded px-3 py-2 text-sm font-semibold text-off-white hover:bg-white/10"
+                className="focus-ring block rounded px-3 py-2 text-sm font-semibold text-off-white hover:bg-off-white/10"
                 href={item.href}
                 key={item.href}
               >
@@ -39,7 +39,7 @@ export function Header() {
         <nav aria-label="Navigasi utama" className="hidden items-center gap-12 lg:gap-16 md:flex">
             {site.navigation.map((item) => (
               <Link
-              className="focus-ring text-sm font-semibold text-off-white/85 transition-colors hover:text-golden-yellow"
+              className="focus-ring text-sm font-semibold text-off-white/85 transition-colors hover:text-off-white hover:underline hover:decoration-2 hover:decoration-hot-pink"
               href={item.href}
               key={item.href}
             >

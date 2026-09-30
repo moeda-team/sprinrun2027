@@ -35,13 +35,13 @@ function ArrowIcon() {
 
 export function RaceSection() {
   return (
-    <section id="race" className="bg-white text-deep-green">
+    <section id="race" className="bg-off-white text-deep-green">
       <Container className="pb-20 pt-16 sm:pb-28 sm:pt-20">
         <div className="grid gap-12 border-b border-deep-green/10 pb-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10 lg:pb-20">
           {highlights.map(({ title, description, icon: Icon }) => (
             <article key={title} className="max-w-xs">
               <Icon />
-              <h2 className="font-display mt-5 text-2xl uppercase leading-[0.95] tracking-wide text-black sm:text-[1.7rem]">{title}</h2>
+              <h2 className="font-display mt-5 text-2xl uppercase leading-[0.95] tracking-wide text-deep-green sm:text-[1.7rem]">{title}</h2>
               <p className="mt-5 text-sm leading-relaxed text-deep-green/65">{description}</p>
             </article>
           ))}
@@ -50,7 +50,7 @@ export function RaceSection() {
         <div className="mt-16 grid gap-10 lg:grid-cols-[minmax(360px,1fr)_minmax(0,1.8fr)] lg:items-end lg:gap-14">
           <div className="relative z-10 min-w-0 max-w-sm">
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-deep-green/45">RACE CATEGORY</p>
-            <h2 className="font-display mt-7 text-[clamp(3.5rem,5vw,5rem)] uppercase italic leading-[0.78] tracking-[-0.04em] text-black sm:text-[5rem]">CHOOSE<br />YOUR CHALLENGE</h2>
+            <h2 className="font-display mt-7 text-[clamp(3.5rem,5vw,5rem)] uppercase italic leading-[0.78] tracking-[-0.04em] text-deep-green sm:text-[5rem]">CHOOSE<br />YOUR CHALLENGE</h2>
             <div className="mt-8 h-1 w-14 bg-hot-pink" />
             <p className="mt-7 text-base leading-relaxed text-deep-green/70">Dua kategori jarak untuk semua pengalaman lari, dari pemula hingga pelari berpengalaman.</p>
             <a href="#registration" className="focus-ring group mt-8 inline-flex items-center gap-4 border-b-2 border-deep-green pb-2 font-bold text-deep-green transition-colors hover:border-hot-pink hover:text-hot-pink">Lihat Detail Race <ArrowIcon /></a>
@@ -58,14 +58,14 @@ export function RaceSection() {
 
           <div className="grid gap-5 sm:grid-cols-2">
             {races.map((race) => (
-              <a href="#registration" key={race.distance} className="group relative isolate min-h-[390px] overflow-hidden rounded-sm bg-deep-green text-white shadow-sm transition-transform duration-300 hover:-translate-y-1">
+              <a href="#registration" key={race.distance} className="group relative isolate min-h-[390px] overflow-hidden rounded-sm bg-deep-green text-off-white shadow-sm transition-transform duration-300 hover:-translate-y-1">
                 <Picture src={race.image} alt={race.alt} width={1774} height={887} sizes="(min-width: 1024px) 36vw, (min-width: 640px) 45vw, 92vw" className="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-deep-green via-deep-green/80 to-deep-green/5" />
                 <div className="flex min-h-[390px] flex-col justify-end p-7 sm:p-8">
-                  <p className="font-display text-[5rem] italic leading-[0.8] tracking-tight text-white">{race.distance}</p>
-                  <h3 className="font-display mt-5 text-2xl italic uppercase text-white">{race.name}</h3>
-                  <p className="mt-4 max-w-[18rem] text-sm leading-relaxed text-white/80">{race.description}</p>
-                  <span className="absolute bottom-7 right-7 flex h-12 w-12 items-center justify-center rounded-full bg-golden-yellow text-black transition-transform duration-300 group-hover:translate-x-1 sm:bottom-8 sm:right-8"><ArrowIcon /></span>
+                  <p className="font-display text-[5rem] italic leading-[0.8] tracking-tight text-off-white">{race.distance}</p>
+                  <h3 className="font-display mt-5 text-2xl italic uppercase text-off-white">{race.name}</h3>
+                  <p className="mt-4 max-w-[18rem] pr-14 text-sm leading-relaxed text-off-white/80">{race.description}</p>
+                  <span className="absolute bottom-7 right-7 flex h-12 w-12 items-center justify-center rounded-full bg-hot-pink text-off-white transition-transform duration-300 group-hover:translate-x-1 sm:bottom-8 sm:right-8"><ArrowIcon /></span>
                 </div>
               </a>
             ))}

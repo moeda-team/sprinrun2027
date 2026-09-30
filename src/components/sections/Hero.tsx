@@ -25,7 +25,7 @@ export function Hero() {
           <p className="hero-fade-up mb-5 text-xs font-bold uppercase tracking-[0.42em] text-soft-mint sm:text-sm">SPRIN RUN 2027</p>
           <h1 className="hero-fade-up hero-delay-1 hero-title text-[clamp(4rem,10vw,9rem)] font-bold uppercase italic leading-[0.82] tracking-[-0.065em]">
             <span className="block text-off-white">NO LIMITS.</span>
-            <span className="block whitespace-nowrap text-hot-pink">MORE MOTION.</span>
+            <span className="block whitespace-nowrap text-off-white">MORE MOTION.</span>
           </h1>
           <div className="hero-fade-up hero-delay-2 mt-9 h-1 w-44 bg-off-white sm:w-64" />
           <p className="hero-fade-up hero-delay-2 mt-7 max-w-md text-base font-medium leading-relaxed text-off-white/85 sm:text-lg">
@@ -33,19 +33,19 @@ export function Hero() {
           </p>
           <div className="hero-fade-up hero-delay-3 mt-8 flex flex-wrap gap-x-9 gap-y-5 text-sm font-semibold uppercase tracking-wide text-off-white">
             <div className="flex items-center gap-3">
-              <CalendarIcon className="h-7 w-7 text-golden-yellow" />
+              <CalendarIcon className="h-7 w-7 text-hot-pink" />
               <span><strong className="block text-xs text-soft-mint">Sunday</strong>12 January 2027</span>
             </div>
             <div className="flex items-center gap-3">
-              <PinIcon className="h-7 w-7 text-golden-yellow" />
+              <PinIcon className="h-7 w-7 text-hot-pink" />
               <span><strong className="block text-xs text-soft-mint">Location</strong>Diponegoro University Choir</span>
             </div>
           </div>
           <div className="hero-fade-up hero-delay-4 mt-10 flex flex-wrap items-center gap-7">
-            <Button className="rounded-full bg-hot-pink px-7 font-extrabold tracking-wide !text-white shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-golden-yellow hover:!text-white" href="#race">
+            <Button className="rounded-full px-7 font-extrabold tracking-wide shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03]" href="#race">
               {site.labels.heroAction} <ArrowIcon className="ml-3 h-5 w-5" />
             </Button>
-            <a className="focus-ring group inline-flex items-center gap-3 font-semibold text-off-white transition-colors duration-300 hover:text-golden-yellow" href="#about">
+            <a className="focus-ring group inline-flex items-center gap-3 font-semibold text-off-white transition-colors duration-300 hover:underline hover:decoration-2 hover:decoration-hot-pink" href="#about">
               Lihat Detail <ArrowIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           </div>

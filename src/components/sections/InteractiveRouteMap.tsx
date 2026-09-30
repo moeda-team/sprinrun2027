@@ -8,7 +8,7 @@ type RouteKey = '5K' | '10K';
 
 const routes: Record<RouteKey, { color: string; points: LatLngExpression[]; stops: Array<{ name: string; point: LatLngExpression }> }> = {
   '5K': {
-    color: '#f2c230',
+    color: 'var(--color-hot-pink)',
     // Approximate course, based on the supplied street-level route description.
     points: [
       [-6.9931, 110.4213], [-6.9914, 110.4230], [-6.9884, 110.4265], [-6.9877, 110.4312],
@@ -17,7 +17,7 @@ const routes: Record<RouteKey, { color: string; points: LatLngExpression[]; stop
     stops: [],
   },
   '10K': {
-    color: '#46a7e9',
+    color: 'var(--color-forest-green)',
     points: [
       [-6.9931, 110.4213], [-6.9987, 110.4223], [-6.9960, 110.4145], [-6.9835, 110.4123],
       [-6.9792, 110.4160], [-6.9725, 110.4204], [-6.9662, 110.4278], [-6.9920, 110.4310],
@@ -46,7 +46,7 @@ export function InteractiveRouteMap({ activeRoute }: { activeRoute: RouteKey }) 
   const startFinish = route.points[0];
 
   return (
-    <div className="relative aspect-[1.06] min-h-[330px] overflow-hidden rounded-[1.5rem] bg-[#dcebe1] sm:min-h-[440px]">
+    <div className="relative aspect-[1.06] min-h-[330px] overflow-hidden rounded-[1.5rem] bg-soft-mint sm:min-h-[440px]">
       <MapContainer center={[-6.986, 110.421]} zoom={13} scrollWheelZoom className="h-full w-full" aria-label={`Peta interaktif rute ${activeRoute} di Semarang`}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -55,11 +55,11 @@ export function InteractiveRouteMap({ activeRoute }: { activeRoute: RouteKey }) 
         />
         <FitRoute points={route.points} activeRoute={activeRoute} />
         <Polyline positions={route.points} pathOptions={{ color: route.color, weight: 7, opacity: 0.95, lineJoin: 'round' }} />
-        <CircleMarker center={startFinish} radius={10} pathOptions={{ color: '#ffffff', fillColor: '#f0509b', fillOpacity: 1, weight: 4 }}>
+        <CircleMarker center={startFinish} radius={10} pathOptions={{ color: 'var(--color-off-white)', fillColor: 'var(--color-hot-pink)', fillOpacity: 1, weight: 4 }}>
           <Tooltip direction="top" offset={[0, -8]} permanent>START / FINISH</Tooltip>
         </CircleMarker>
         {route.stops.map((stop) => (
-          <CircleMarker key={stop.name} center={stop.point} radius={6} pathOptions={{ color: '#ffffff', fillColor: route.color, fillOpacity: 1, weight: 3 }}>
+          <CircleMarker key={stop.name} center={stop.point} radius={6} pathOptions={{ color: 'var(--color-off-white)', fillColor: route.color, fillOpacity: 1, weight: 3 }}>
             <Tooltip direction="top" offset={[0, -8]}>{stop.name}</Tooltip>
           </CircleMarker>
         ))}
