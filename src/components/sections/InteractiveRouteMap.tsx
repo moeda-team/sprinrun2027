@@ -14,10 +14,7 @@ const routes: Record<RouteKey, { color: string; points: LatLngExpression[]; stop
       [-6.9931, 110.4213], [-6.9914, 110.4230], [-6.9884, 110.4265], [-6.9877, 110.4312],
       [-6.9916, 110.4332], [-6.9960, 110.4288], [-6.9954, 110.4240], [-6.9931, 110.4213],
     ],
-    stops: [
-      { name: 'Jl. Majapahit', point: [-6.9884, 110.4265] },
-      { name: 'Jl. MT Haryono', point: [-6.9916, 110.4332] },
-    ],
+    stops: [],
   },
   '10K': {
     color: '#46a7e9',
@@ -26,13 +23,7 @@ const routes: Record<RouteKey, { color: string; points: LatLngExpression[]; stop
       [-6.9792, 110.4160], [-6.9725, 110.4204], [-6.9662, 110.4278], [-6.9920, 110.4310],
       [-6.9970, 110.4270], [-6.9931, 110.4213],
     ],
-    stops: [
-      { name: 'Jl. Sriwijaya / Veteran', point: [-6.9987, 110.4223] },
-      { name: 'DP Mall', point: [-6.9835, 110.4123] },
-      { name: 'Paragon City Mall', point: [-6.9792, 110.4160] },
-      { name: 'Queen City / Kota Lama', point: [-6.9725, 110.4204] },
-      { name: 'Jl. MT Haryono', point: [-6.9920, 110.4310] },
-    ],
+    stops: [],
   },
 };
 
@@ -60,6 +51,7 @@ export function InteractiveRouteMap({ activeRoute }: { activeRoute: RouteKey }) 
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          className="route-map-tiles"
         />
         <FitRoute points={route.points} activeRoute={activeRoute} />
         <Polyline positions={route.points} pathOptions={{ color: route.color, weight: 7, opacity: 0.95, lineJoin: 'round' }} />
@@ -72,12 +64,6 @@ export function InteractiveRouteMap({ activeRoute }: { activeRoute: RouteKey }) 
           </CircleMarker>
         ))}
       </MapContainer>
-      <div className="pointer-events-none absolute left-4 top-4 z-[500] rounded-full bg-white/95 px-4 py-2 text-xs font-bold uppercase tracking-wide text-deep-green shadow-sm">
-        Drag to explore · scroll to zoom
-      </div>
-      <div className="pointer-events-none absolute bottom-4 left-4 z-[500] max-w-[13rem] rounded-xl bg-deep-green/90 px-3 py-2 text-[11px] leading-snug text-white/85 shadow-sm">
-        Approximate course — final route subject to race-day approval.
-      </div>
     </div>
   );
 }

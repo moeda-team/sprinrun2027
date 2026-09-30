@@ -56,6 +56,9 @@ body {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
+.route-map-tiles {
+  filter: grayscale(0.9) brightness(1.12) contrast(0.88);
+}
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
