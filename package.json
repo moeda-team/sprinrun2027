@@ -1,0 +1,50 @@
+{
+  "name": "sprinrun2027",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "node scripts/optimize-images.mjs",
+    "build": "next build --webpack",
+    "start": "serve out -l 4173",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "analyze": "ANALYZE=true next build --webpack",
+    "size": "node scripts/check-budget.mjs",
+    "lhci": "lhci autorun --config=.lighthouserc.json"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "serve": "^14.2.4"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.15.1",
+    "@next/bundle-analyzer": "latest",
+    "@size-limit/file": "^11.2.0",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "^10.4.21",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "prettier": "^3.6.2",
+    "sharp": "^0.34.3",
+    "size-limit": "^11.2.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "latest"
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module"
+  ],
+  "size-limit": [
+    {
+      "name": "First-load JavaScript budget",
+      "path": "out/_next/static/**/*.js",
+      "limit": "100 kB",
+      "gzip": true
+    }
+  ]
+}
