@@ -1,6 +1,9 @@
 import { site } from '@/config/site';
 
 export function WhatsAppButton() {
+  // Do not expose a non-working contact number. Set NEXT_PUBLIC_WHATSAPP_NUMBER
+  // when the official channel is ready for publication.
+  if (!site.whatsappNumber) return null;
   const href = `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(site.whatsappMessage)}`;
   return (
     <a

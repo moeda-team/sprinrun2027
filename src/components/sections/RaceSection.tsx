@@ -25,8 +25,8 @@ const highlights = [
 ];
 
 const races = [
-  { distance: '5K', name: 'FUN RUN', description: 'Untuk kamu yang ingin memulai perjalanan lari.', image: '/images/race-5k.png', alt: 'Pelari menggunakan sepatu hijau dan merah muda di jalan saat matahari terbenam.' },
-  { distance: '10K', name: 'CHALLENGE RUN', description: 'Tantangan lebih jauh untuk versi terbaikmu.', image: '/images/race-10k.png', alt: 'Pelari melangkah di jalan kota saat matahari terbenam.' },
+  { distance: '5K', name: 'FUN RUN', flagOff: '05.30 WIB', description: 'Untuk kamu yang ingin memulai perjalanan lari.', image: '/images/race-5k.png', alt: 'Pelari menggunakan sepatu hijau dan merah muda di jalan saat matahari terbenam.' },
+  { distance: '10K', name: 'CHALLENGE RUN', flagOff: '05.00 WIB', description: 'Tantangan lebih jauh untuk versi terbaikmu.', image: '/images/race-10k.png', alt: 'Pelari melangkah di jalan kota saat matahari terbenam.' },
 ];
 
 function ArrowIcon() {
@@ -36,7 +36,7 @@ function ArrowIcon() {
 export function RaceSection() {
   return (
     <section id="race" className="bg-off-white text-deep-green">
-      <Container className="pb-20 pt-16 sm:pb-28 sm:pt-20">
+      <Container className="py-16 sm:py-24" data-reveal>
         <div className="grid gap-12 border-b border-deep-green/10 pb-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10 lg:pb-20">
           {highlights.map(({ title, description, icon: Icon }) => (
             <article key={title} className="max-w-xs">
@@ -64,6 +64,7 @@ export function RaceSection() {
                 <div className="flex min-h-[390px] flex-col justify-end p-7 sm:p-8">
                   <p className="font-display text-[5rem] italic leading-[0.8] tracking-tight text-off-white">{race.distance}</p>
                   <h3 className="font-display mt-5 text-2xl italic uppercase text-off-white">{race.name}</h3>
+                  <p className="mt-3 text-xs font-bold uppercase tracking-[.16em] text-soft-mint">Flag-off {race.flagOff}</p>
                   <p className="mt-4 max-w-[18rem] pr-14 text-sm leading-relaxed text-off-white/80">{race.description}</p>
                   <span className="absolute bottom-7 right-7 flex h-12 w-12 items-center justify-center rounded-full bg-hot-pink text-off-white transition-transform duration-300 group-hover:translate-x-1 sm:bottom-8 sm:right-8"><ArrowIcon /></span>
                 </div>

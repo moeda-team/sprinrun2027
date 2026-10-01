@@ -4,7 +4,7 @@ import { Picture } from '@/components/ui/Picture';
 export function RaceKitSection() {
   return (
     <section id="race-kit" className="bg-off-white py-16 text-deep-green sm:py-24">
-      <Container>
+      <Container data-reveal>
         <div className="grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-center lg:gap-16">
           <div className="max-w-md">
             <p className="text-xs font-bold uppercase tracking-[.35em] text-deep-green/45">RACE KIT</p>

@@ -33,15 +33,15 @@ export function RouteSection() {
   const detail = routeDetails[activeRoute];
 
   return (
-    <section id="route" className="overflow-hidden bg-paper py-20 text-ink sm:py-28">
+    <section id="route" className="overflow-hidden bg-paper py-16 text-ink sm:py-24">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,.75fr)] lg:items-center lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,.75fr)] lg:items-center lg:gap-16" data-reveal>
           <InteractiveRouteMap activeRoute={activeRoute} />
 
           <div className="max-w-md lg:justify-self-end">
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-ink">Explore The Course</p>
             <h2 className="font-display mt-4 text-[clamp(3.5rem,7vw,6.4rem)] uppercase italic leading-[.72] tracking-[-.055em] text-ink">FIND YOUR<br /><span className="text-hot-pink">FINISH LINE</span></h2>
-            <p className="mt-7 text-base leading-relaxed text-ink/70">Pilih kategori untuk melihat jalur yang akan kamu taklukkan pada hari perlombaan.</p>
+            <p className="mt-7 text-base leading-relaxed text-ink/70">Pilih kategori untuk melihat gambaran jalur yang akan kamu taklukkan. Rute final akan diumumkan setelah verifikasi pihak terkait.</p>
 
             <div className="mt-8 inline-flex rounded-full border border-line bg-soft-mint/50 p-1" role="tablist" aria-label="Pilih rute perlombaan">
               {(Object.keys(routeDetails) as RouteKey[]).map((route) => {
@@ -74,6 +74,7 @@ export function RouteSection() {
                 </div>
               </div>
               <p className="mt-6 max-w-sm text-sm leading-relaxed text-ink/70">{detail.description}</p>
+              <p className="mt-3 max-w-sm text-sm font-semibold leading-relaxed text-ink/70">Titik water station, elevasi, dan detail penutupan jalan akan diumumkan bersama rute final.</p>
             </div>
           </div>
         </div>

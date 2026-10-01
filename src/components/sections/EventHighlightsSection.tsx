@@ -7,9 +7,9 @@ function ArrowIcon() {
 
 export function EventHighlightsSection() {
   return (
-    <section id="about" className="bg-off-white pb-16 text-deep-green sm:pb-24">
+    <section id="about" className="bg-off-white py-16 text-deep-green sm:py-24">
       <Container className="px-0 sm:px-6 lg:px-8">
-        <div className="grid overflow-hidden lg:min-h-[620px] lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid overflow-hidden lg:min-h-[620px] lg:grid-cols-[1.15fr_0.85fr]" data-reveal>
           <div className="relative min-h-[360px] bg-deep-green sm:min-h-[480px] lg:min-h-full">
             <Picture
               src="/images/event-highlights.png"
@@ -27,7 +27,7 @@ export function EventHighlightsSection() {
               <h2 className="font-display mt-7 text-[clamp(3.4rem,5vw,5rem)] uppercase italic leading-[0.8] tracking-[-0.04em] text-deep-green">LEBIH DARI<br />SEKADAR LARI</h2>
               <div className="mt-8 h-1 w-14 bg-hot-pink" />
               <p className="mt-7 max-w-sm text-base leading-relaxed text-deep-green/70">Rasakan pengalaman lengkap dengan rangkaian kegiatan, hiburan, serta berbagai aktivitas menarik untuk semua peserta.</p>
-              <a href="#registration" className="focus-ring group mt-8 inline-flex items-center gap-4 border-b-2 border-deep-green pb-2 font-bold text-deep-green transition-colors hover:border-hot-pink hover:text-hot-pink">Lihat Selengkapnya <ArrowIcon /></a>
+              <a href="#rundown" className="focus-ring group mt-8 inline-flex items-center gap-4 border-b-2 border-deep-green pb-2 font-bold text-deep-green transition-colors hover:border-hot-pink hover:text-hot-pink">Lihat Rundown <ArrowIcon /></a>
             </div>
           </div>
         </div>

@@ -1,17 +1,20 @@
 import { Container } from '@/components/ui/Container';
 
 const questions = [
-  ['Kapan dan di mana SPRIN RUN 2027 diselenggarakan?', 'Informasi tanggal dan lokasi acara akan diumumkan melalui kanal resmi SPRIN RUN. Pantau halaman ini untuk pembaruan terbaru.'],
+  ['Kapan dan di mana SPRIN RUN 2027 diselenggarakan?', 'SPRIN RUN 2027 berlangsung pada Minggu, 17 Januari 2027. Venue akan diumumkan melalui kanal resmi setelah dikonfirmasi.'],
   ['Apa saja kategori yang tersedia?', 'SPRIN RUN menyediakan kategori 5K dan 10K. Pilih jarak yang paling sesuai dengan target dan pengalaman larimu.'],
-  ['Berapa biaya pendaftaran?', 'Biaya pendaftaran bergantung pada kategori dan periode registrasi. Detail biaya akan tersedia saat pendaftaran dibuka.'],
+  ['Berapa biaya pendaftaran?', 'Harga, periode early bird, dan batas akhir pendaftaran akan diumumkan saat registrasi dibuka.'],
   ['Apakah ada batasan usia?', 'Peserta di bawah usia 17 tahun perlu didampingi dan didaftarkan oleh orang tua atau wali.'],
   ['Bagaimana cara mengambil race kit?', 'Jadwal dan lokasi pengambilan race kit akan diinformasikan kepada peserta terdaftar menjelang hari acara.'],
+  ['Apakah pendaftaran dapat dibatalkan atau dialihkan?', 'Ketentuan refund dan pengalihan bib akan diumumkan bersamaan dengan syarat dan ketentuan pendaftaran.'],
+  ['Apa yang perlu dibawa pada hari acara?', 'Bawa e-ticket, identitas yang sesuai data pendaftaran, dan perlengkapan lari pribadi. Informasi teknis lengkap akan dikirim kepada peserta terdaftar.'],
+  ['Bagaimana jika hujan?', 'Acara tetap berlangsung selama kondisi dinyatakan aman. Pembaruan operasional akan disampaikan melalui kanal resmi.'],
 ] as const;
 
 export function FAQSection() {
   return (
     <section id="faq" className="bg-off-white py-16 text-deep-green sm:py-24">
-      <Container>
+      <Container data-reveal>
         <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
           <div className="max-w-md">
             <p className="text-xs font-bold uppercase tracking-[.35em] text-deep-green/45">FAQ</p>

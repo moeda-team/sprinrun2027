@@ -34,15 +34,15 @@ export function Hero() {
           <div className="hero-fade-up hero-delay-3 mt-8 flex flex-wrap gap-x-9 gap-y-5 text-sm font-semibold uppercase tracking-wide text-off-white">
             <div className="flex items-center gap-3">
               <CalendarIcon className="h-7 w-7 text-hot-pink" />
-              <span><strong className="block text-xs text-soft-mint">Sunday</strong>12 January 2027</span>
+              <span><strong className="block text-xs text-soft-mint">Tanggal</strong>{site.eventDate}</span>
             </div>
             <div className="flex items-center gap-3">
               <PinIcon className="h-7 w-7 text-hot-pink" />
-              <span><strong className="block text-xs text-soft-mint">Location</strong>Diponegoro University Choir</span>
+              <span><strong className="block text-xs text-soft-mint">Lokasi</strong>{site.venue}</span>
             </div>
           </div>
           <div className="hero-fade-up hero-delay-4 mt-10 flex flex-wrap items-center gap-7">
-            <Button className="rounded-full px-7 font-extrabold tracking-wide shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03]" href={site.registrationUrl} target="_blank" rel="noopener noreferrer">
+            <Button className="rounded-full px-7 font-extrabold tracking-wide shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03]" href={site.registrationUrl}>
               {site.labels.heroAction} <ArrowIcon className="ml-3 h-5 w-5" />
             </Button>
             <a className="focus-ring group inline-flex items-center gap-3 font-semibold text-off-white transition-colors duration-300 hover:underline hover:decoration-2 hover:decoration-hot-pink" href="#about">

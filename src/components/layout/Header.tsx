@@ -47,6 +47,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
+        <a href="#registration" className="focus-ring hidden rounded-full bg-hot-pink px-5 py-3 text-sm font-extrabold text-off-white transition hover:bg-forest-green xl:inline-flex">Info Pendaftaran</a>
       </Container>
     </header>
   );

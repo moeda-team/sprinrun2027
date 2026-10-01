@@ -6,18 +6,20 @@ import { RaceKitSection } from '@/components/sections/RaceKitSection';
 import { RundownSection } from '@/components/sections/RundownSection';
 import { RegistrationSection } from '@/components/sections/RegistrationSection';
 import { FAQSection } from '@/components/sections/FAQSection';
+import { CTASection } from '@/components/sections/CTASection';
 
 export default function HomePage() {
   return (
     <>
       <Hero />
       <RaceSection />
+      <RegistrationSection />
       <EventHighlightsSection />
       <RaceKitSection />
       <RouteSection />
       <RundownSection />
-      <RegistrationSection />
       <FAQSection />
+      <CTASection />
     </>
   );
 }
