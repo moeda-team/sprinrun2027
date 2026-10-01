@@ -3,20 +3,21 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Container } from '@/components/ui/Container';
+import { site } from '@/config/site';
 
 type RouteKey = '5K' | '10K';
 
 const routeDetails: Record<RouteKey, { description: string; distance: string; flagOff: string; color: string; selectedText: string }> = {
   '5K': {
     description: 'Rute yang ramah untuk dinikmati bersama teman, keluarga, dan langkah pertamamu menuju garis finis.',
-    distance: '5,0',
+    distance: '5,4',
     flagOff: '05:30',
     color: 'var(--color-hot-pink)',
     selectedText: 'text-off-white',
   },
   '10K': {
     description: 'Jarak lebih jauh untuk kamu yang siap menjaga ritme dan menaklukkan tantangan berikutnya.',
-    distance: '10,0',
+    distance: '10,1',
     flagOff: '05:00',
     color: 'var(--color-forest-green)',
     selectedText: 'text-off-white',
@@ -74,7 +75,9 @@ export function RouteSection() {
                 </div>
               </div>
               <p className="mt-6 max-w-sm text-sm leading-relaxed text-ink/70">{detail.description}</p>
-              <p className="mt-3 max-w-sm text-sm font-semibold leading-relaxed text-ink/70">Titik water station, elevasi, dan detail penutupan jalan akan diumumkan bersama rute final.</p>
+              <p className="mt-3 max-w-sm text-sm font-semibold leading-relaxed text-ink/70">Rute mengikuti jalur resmi SPRIN RUN yang telah dipetakan.</p>
+              <a href={site.routeStartMapUrl} target="_blank" rel="noopener noreferrer" className="focus-ring mt-7 inline-flex min-h-11 items-center rounded-full border-2 border-deep-green px-5 text-sm font-extrabold text-deep-green transition hover:bg-deep-green hover:text-off-white">Lihat Titik Start di Google Maps <span aria-hidden="true" className="ml-2">↗</span></a>
+              <p className="mt-2 text-xs text-ink/55">Titik start/finish perkiraan; detail lokasi final akan diumumkan.</p>
             </div>
           </div>
         </div>
