@@ -1,6 +1,7 @@
 import { site } from '@/config/site';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { EventCountdown } from '@/components/sections/EventCountdown';
 
 function CalendarIcon({ className = '' }: { className?: string }) {
   return <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8"><rect x="3.5" y="5" width="17" height="16" rx="2" /><path d="M7 3v4M17 3v4M3.5 9.5h17" /></svg>;
@@ -41,6 +42,7 @@ export function Hero() {
               <span><strong className="block text-xs text-soft-mint">Lokasi</strong>{site.venue}</span>
             </div>
           </div>
+          <EventCountdown />
           <div className="hero-fade-up hero-delay-4 mt-10 flex flex-wrap items-center gap-7">
             <Button className="rounded-full px-7 font-extrabold tracking-wide shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03]" href={site.registrationUrl}>
               {site.labels.heroAction} <ArrowIcon className="ml-3 h-5 w-5" />
