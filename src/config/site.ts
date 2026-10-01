@@ -16,11 +16,11 @@ export const site = {
   },
   navigation: [
     { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
     { label: 'Race', href: '#race' },
+    { label: 'About', href: '#about' },
+    { label: 'Benefits', href: '#race-kit' },
     { label: 'Route', href: '#route' },
     { label: 'Rundown', href: '#rundown' },
-    { label: 'Benefits', href: '#benefits' },
     { label: 'FAQ', href: '#faq' },
   ],
 } as const;

@@ -1,7 +1,12 @@
 node_modules/
 .next/
 out/
-public/images/
+# Most responsive images are generated during `prebuild`, but these two are
+# referenced directly by the header and hero. They must be present in a fresh
+# deployment checkout as well.
+public/images/*
+!public/images/hero.png
+!public/images/logo-with-border.webp
 *.tsbuildinfo
 .env*
 !.env.example
