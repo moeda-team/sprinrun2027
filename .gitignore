@@ -7,6 +7,7 @@ out/
 public/images/*
 !public/images/hero.png
 !public/images/logo-with-border.webp
+!public/images/hosts/
 *.tsbuildinfo
 .env*
 !.env.example

@@ -23,9 +23,9 @@ export function Hero() {
       <Container className="flex min-h-[760px] items-center pb-12 pt-36 lg:min-h-screen lg:pb-16 lg:pt-28">
         <div className="max-w-3xl">
           <p className="hero-fade-up mb-5 text-xs font-bold uppercase tracking-[0.42em] text-soft-mint sm:text-sm">SPRIN RUN 2027</p>
-          <h1 className="hero-fade-up hero-delay-1 hero-title text-[clamp(4rem,10vw,9rem)] font-bold uppercase italic leading-[0.82] tracking-[-0.065em]">
-            <span className="block text-off-white">NO LIMITS.</span>
-            <span className="block whitespace-nowrap text-off-white">MORE MOTION.</span>
+          <h1 className="hero-fade-up hero-delay-1 hero-title text-[clamp(4rem,10vw,9rem)] font-bold italic leading-[0.82] tracking-[-0.065em]">
+            <span className="block text-off-white">Every Step.</span>
+            <span className="block whitespace-nowrap text-off-white">Saves a Life</span>
           </h1>
           <div className="hero-fade-up hero-delay-2 mt-9 h-1 w-44 bg-off-white sm:w-64" />
           <p className="hero-fade-up hero-delay-2 mt-7 max-w-md text-base font-medium leading-relaxed text-off-white/85 sm:text-lg">

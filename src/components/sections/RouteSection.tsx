@@ -34,7 +34,7 @@ export function RouteSection() {
   const detail = routeDetails[activeRoute];
 
   return (
-    <section id="route" className="overflow-hidden bg-paper py-16 text-ink sm:py-24">
+    <section id="route" className="overflow-hidden bg-paper pb-8 pt-8 text-ink sm:pb-12 sm:pt-12">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,.75fr)] lg:items-center lg:gap-16" data-reveal>
           <InteractiveRouteMap activeRoute={activeRoute} />

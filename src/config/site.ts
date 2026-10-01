@@ -1,6 +1,6 @@
 export const site = {
   name: 'SPRIN RUN 2027',
-  description: 'Ajang lari untuk bergerak lebih sehat, lebih kuat, dan lebih terhubung.',
+  description: '#SPRINRUN2027 #EveryStepSavesALife #SelamatkanPerempuanIndonesia #CharityRun #Pogi',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sprinrun2027.vercel.app',
   eventDate: 'Minggu, 17 Januari 2027',
   venue: 'Kantor Gubernur Jawa Tengah',
@@ -11,7 +11,7 @@ export const site = {
   labels: {
     menu: 'Menu',
     skipLink: 'Lewati ke konten',
-    heroTitle: 'NO LIMITS. MORE MOTION.',
+    heroTitle: 'Every Step. Saves a Life',
     heroAction: 'Info Pendaftaran',
     sectionTitle: 'Info Pendaftaran',
     sectionAction: 'Lihat Detail',

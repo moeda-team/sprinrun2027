@@ -1,34 +1,49 @@
 import { Container } from '@/components/ui/Container';
 import { Picture } from '@/components/ui/Picture';
 
-function ArrowIcon() {
-  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h13M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" /></svg>;
-}
-
 export function EventHighlightsSection() {
   return (
-    <section id="about" className="bg-off-white py-16 text-deep-green sm:py-24">
-      <Container className="px-0 sm:px-6 lg:px-8">
-        <div className="grid overflow-hidden lg:min-h-[620px] lg:grid-cols-[1.15fr_0.85fr]" data-reveal>
-          <div className="relative min-h-[360px] bg-deep-green sm:min-h-[480px] lg:min-h-full">
-            <Picture
-              src="/images/event-highlights.png"
-              alt="Pelari pria dan wanita berlari bersama di kota saat matahari terbenam."
-              width={1672}
-              height={941}
-              sizes="(min-width: 1024px) 58vw, 100vw"
-              className="absolute inset-0 h-full w-full object-cover object-[72%_center] lg:object-[78%_center]"
-            />
-          </div>
-
-          <div className="flex items-center bg-off-white px-6 py-16 sm:px-12 sm:py-20 lg:px-16 xl:px-20">
-            <div className="max-w-md">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-deep-green/45">EVENT HIGHLIGHTS</p>
-              <h2 className="font-display mt-7 text-[clamp(3.4rem,5vw,5rem)] uppercase italic leading-[0.8] tracking-[-0.04em] text-deep-green">LEBIH DARI<br />SEKADAR LARI</h2>
-              <div className="mt-8 h-1 w-14 bg-hot-pink" />
-              <p className="mt-7 max-w-sm text-base leading-relaxed text-deep-green/70">Rasakan pengalaman lengkap dengan rangkaian kegiatan, hiburan, serta berbagai aktivitas menarik untuk semua peserta.</p>
-              <a href="#rundown" className="focus-ring group mt-8 inline-flex items-center gap-4 border-b-2 border-deep-green pb-2 font-bold text-deep-green transition-colors hover:border-hot-pink hover:text-hot-pink">Lihat Rundown <ArrowIcon /></a>
+    <section id="about" className="bg-off-white pb-8 pt-16 text-deep-green sm:pb-12 sm:pt-24">
+      <Container>
+        <div className="grid gap-6 lg:grid-cols-2" data-reveal>
+          <article className="relative isolate overflow-hidden rounded-2xl bg-deep-green px-7 py-10 text-off-white sm:px-10 sm:py-14 lg:col-span-2 lg:grid lg:grid-cols-[1fr_.85fr] lg:items-center lg:gap-10">
+            <div className="absolute inset-0 -z-10 opacity-20">
+              <Picture src="/images/event-highlights.png" alt="" width={1672} height={941} sizes="100vw" className="h-full w-full object-cover" />
             </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[.35em] text-soft-mint">TENTANG SPRIN RUN</p>
+              <h2 className="font-display mt-6 text-[clamp(3rem,6vw,5rem)] uppercase italic leading-[.83] tracking-[-.04em]">APA ITU<br />SPRIN RUN?</h2>
+            </div>
+            <p className="mt-7 text-base font-medium leading-relaxed text-off-white/90 lg:mt-0 lg:text-lg">
+              SPRIN RUN (Selamatkan Perempuan Indonesia) adalah inisiatif Perkumpulan Obstetri dan Ginekologi Indonesia (POGI) Semarang melalui program POGI SPRIN. Event ini memadukan kampanye hidup sehat melalui olahraga lari dan edukasi SPRIN.
+            </p>
+          </article>
+
+          <article className="rounded-2xl bg-soft-mint/35 p-7 sm:p-10">
+            <p className="text-xs font-bold uppercase tracking-[.35em] text-deep-green/55">RUN FOR GOOD</p>
+            <h3 className="font-display mt-5 text-4xl uppercase italic leading-[.9] tracking-[-.03em] text-deep-green sm:text-5xl">RUN<br />&amp; CHARITY</h3>
+            <p className="mt-6 leading-relaxed text-deep-green/75">
+              Dengan ikut event ini, kamu tidak hanya berlari untuk kesehatan diri sendiri, tetapi juga ikut mendukung kesehatan perempuan Indonesia. Keuntungan dari pendaftaran disalurkan melalui badan resmi untuk mendukung program SPRIN.
+            </p>
+            <p className="mt-4 leading-relaxed text-deep-green/75">
+              Dukungan ini membantu menghadirkan vaksinasi HPV dan skrining kesehatan reproduksi bagi perempuan yang membutuhkan. Edukasi tentang kesehatan reproduksi juga menjadi bagian dari upaya pencegahan dan deteksi dini, agar lebih banyak perempuan dapat memperoleh informasi serta akses pemeriksaan yang dibutuhkan.
+            </p>
+            <p className="mt-4 leading-relaxed text-deep-green/75">
+              Melalui gerakan lari dan charity ini, setiap langkah mengajak lebih banyak orang peduli pada kesehatan perempuan—termasuk pentingnya persiapan kesehatan dan gizi sebelum kehamilan. Bersama, kita mendukung program SPRIN untuk membantu meningkatkan kesehatan perempuan dan menekan risiko yang dapat berujung pada Angka Kematian Ibu.
+            </p>
+          </article>
+
+          <div className="grid gap-6">
+            <article className="rounded-2xl bg-deep-green p-7 text-off-white sm:p-9">
+              <p className="text-xs font-bold uppercase tracking-[.3em] text-soft-mint">UNTUK TENAGA KESEHATAN</p>
+              <h3 className="font-display mt-4 text-3xl uppercase italic leading-tight sm:text-4xl">BAGI PARA NAKES</h3>
+              <p className="mt-4 leading-relaxed text-off-white/80">Dengan mengikuti SPRIN RUN, para tenaga kesehatan (Nakes) akan mendapatkan Satuan Kredit Profesi (SKP). Nakes yang dimaksud antara lain Dokter Umum, Dokter Spesialis, Bidan, Perawat, Apoteker, dan lainnya.</p>
+            </article>
+            <article className="rounded-2xl border border-deep-green/15 bg-white p-7 sm:p-9">
+              <p className="text-xs font-bold uppercase tracking-[.3em] text-hot-pink">UNTUK SEMUA</p>
+              <h3 className="font-display mt-4 text-3xl uppercase italic leading-tight text-deep-green sm:text-4xl">BAGI MASYARAKAT UMUM</h3>
+              <p className="mt-4 leading-relaxed text-deep-green/75">Event ini menjadi langkah konkret untuk ikut menyelamatkan perempuan Indonesia melalui edukasi reproduksi, vaksin HPV, persiapan kesehatan dan gizi sebelum kehamilan, hingga upaya menurunkan Angka Kematian Ibu (AKI).</p>
+            </article>
           </div>
         </div>
       </Container>

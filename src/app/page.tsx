@@ -7,19 +7,21 @@ import { RundownSection } from '@/components/sections/RundownSection';
 import { RegistrationSection } from '@/components/sections/RegistrationSection';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { CTASection } from '@/components/sections/CTASection';
+import { HostsSection } from '@/components/sections/HostsSection';
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <RaceSection />
-      <RegistrationSection />
       <EventHighlightsSection />
-      <RaceKitSection />
+      <RaceSection />
       <RouteSection />
+      <RaceKitSection />
       <RundownSection />
+      <RegistrationSection />
       <FAQSection />
       <CTASection />
+      <HostsSection />
     </>
   );
 }
