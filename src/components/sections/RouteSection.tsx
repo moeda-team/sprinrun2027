@@ -33,17 +33,17 @@ export function RouteSection() {
   const detail = routeDetails[activeRoute];
 
   return (
-    <section id="route" className="route-section overflow-hidden py-20 text-off-white sm:py-28">
+    <section id="route" className="overflow-hidden bg-paper py-20 text-ink sm:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,.75fr)] lg:items-center lg:gap-16">
           <InteractiveRouteMap activeRoute={activeRoute} />
 
           <div className="max-w-md lg:justify-self-end">
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-off-white">Explore The Course</p>
-            <h2 className="font-display mt-4 text-[clamp(3.5rem,7vw,6.4rem)] uppercase italic leading-[.72] tracking-[-.055em] text-off-white">FIND YOUR<br /><span className="text-hot-pink">FINISH LINE</span></h2>
-            <p className="mt-7 text-base leading-relaxed text-off-white/70">Pilih kategori untuk melihat jalur yang akan kamu taklukkan pada hari perlombaan.</p>
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-ink">Explore The Course</p>
+            <h2 className="font-display mt-4 text-[clamp(3.5rem,7vw,6.4rem)] uppercase italic leading-[.72] tracking-[-.055em] text-ink">FIND YOUR<br /><span className="text-hot-pink">FINISH LINE</span></h2>
+            <p className="mt-7 text-base leading-relaxed text-ink/70">Pilih kategori untuk melihat jalur yang akan kamu taklukkan pada hari perlombaan.</p>
 
-            <div className="mt-8 inline-flex rounded-full border border-off-white/25 bg-night-green/50 p-1" role="tablist" aria-label="Pilih rute perlombaan">
+            <div className="mt-8 inline-flex rounded-full border border-line bg-soft-mint/50 p-1" role="tablist" aria-label="Pilih rute perlombaan">
               {(Object.keys(routeDetails) as RouteKey[]).map((route) => {
                 const selected = route === activeRoute;
                 return (
@@ -53,7 +53,7 @@ export function RouteSection() {
                     role="tab"
                     aria-selected={selected}
                     onClick={() => setActiveRoute(route)}
-                    className={`focus-ring rounded-full px-6 py-2.5 text-sm font-black transition ${selected ? routeDetails[route].selectedText : 'text-off-white/60 hover:bg-off-white/10 hover:text-off-white'}`}
+                    className={`focus-ring rounded-full px-6 py-2.5 text-sm font-black transition ${selected ? routeDetails[route].selectedText : 'text-ink/60 hover:bg-white hover:text-ink'}`}
                     style={selected ? { backgroundColor: routeDetails[route].color } : undefined}
                   >
                     {route}
@@ -65,15 +65,15 @@ export function RouteSection() {
             <div className="mt-9" role="tabpanel">
               <div className="flex gap-9 sm:gap-12">
                 <div>
-                  <strong className="font-display block text-5xl leading-none tracking-wide text-off-white sm:text-6xl">{detail.distance}</strong>
-                  <span className="mt-2 block text-xs font-bold uppercase tracking-[.16em] text-off-white/60">Kilometer</span>
+                  <strong className="font-display block text-5xl leading-none tracking-wide text-ink sm:text-6xl">{detail.distance}</strong>
+                  <span className="mt-2 block text-xs font-bold uppercase tracking-[.16em] text-ink/60">Kilometer</span>
                 </div>
                 <div>
-                  <strong className="font-display block text-5xl leading-none tracking-wide text-off-white sm:text-6xl">{detail.flagOff}</strong>
-                  <span className="mt-2 block text-xs font-bold uppercase tracking-[.16em] text-off-white/60">Flag off</span>
+                  <strong className="font-display block text-5xl leading-none tracking-wide text-ink sm:text-6xl">{detail.flagOff}</strong>
+                  <span className="mt-2 block text-xs font-bold uppercase tracking-[.16em] text-ink/60">Flag off</span>
                 </div>
               </div>
-              <p className="mt-6 max-w-sm text-sm leading-relaxed text-off-white/70">{detail.description}</p>
+              <p className="mt-6 max-w-sm text-sm leading-relaxed text-ink/70">{detail.description}</p>
             </div>
           </div>
         </div>
