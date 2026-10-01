@@ -15,13 +15,13 @@ export default function HomePage() {
       <Hero />
       <EventHighlightsSection />
       <RaceSection />
+      <RegistrationSection />
       <RouteSection />
       <RaceKitSection />
       <RundownSection />
-      <RegistrationSection />
       <FAQSection />
-      <CTASection />
       <HostsSection />
+      <CTASection />
     </>
   );
 }

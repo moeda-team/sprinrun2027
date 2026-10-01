@@ -3,7 +3,7 @@ import { Container } from '@/components/ui/Container';
 const questions = [
   ['Kapan dan di mana SPRIN RUN 2027 diselenggarakan?', 'SPRIN RUN 2027 berlangsung pada Minggu, 17 Januari 2027 di Kantor Gubernur Jawa Tengah.'],
   ['Apa saja kategori yang tersedia?', 'SPRIN RUN menyediakan kategori 5K dan 10K. Pilih jarak yang paling sesuai dengan target dan pengalaman larimu.'],
-  ['Berapa biaya pendaftaran?', 'Harga, periode early bird, dan batas akhir pendaftaran akan diumumkan saat registrasi dibuka.'],
+  ['Berapa biaya pendaftaran?', 'Early Bird Umum: Rp200.000 untuk 5K dan Rp250.000 untuk 10K, berlaku sampai 30 Oktober 2026 pukul 23.59. SKP Early khusus tenaga kesehatan sebesar Rp300.000 untuk 5K dan Rp350.000 untuk 10K telah berakhir pada 30 September 2026 pukul 23.59.'],
   ['Apakah ada batasan usia?', 'Peserta di bawah usia 17 tahun perlu didampingi dan didaftarkan oleh orang tua atau wali.'],
   ['Bagaimana cara mengambil race kit?', 'Jadwal dan lokasi pengambilan race kit akan diinformasikan kepada peserta terdaftar menjelang hari acara.'],
   ['Apakah pendaftaran dapat dibatalkan atau dialihkan?', 'Ketentuan refund dan pengalihan bib akan diumumkan bersamaan dengan syarat dan ketentuan pendaftaran.'],
@@ -13,7 +13,7 @@ const questions = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="bg-off-white py-16 text-deep-green sm:py-24">
+    <section id="faq" className="bg-off-white pb-8 pt-8 text-deep-green sm:pb-12 sm:pt-12">
       <Container data-reveal>
         <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
           <div className="max-w-md">

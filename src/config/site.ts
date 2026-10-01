@@ -5,7 +5,9 @@ export const site = {
   eventDate: 'Minggu, 17 Januari 2027',
   venue: 'Kantor Gubernur Jawa Tengah',
   routeStartMapUrl: 'https://www.google.com/maps/search/?api=1&query=-6.9931,110.4213',
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER,
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '6281227875478',
+  contactName: 'dr. Radith Aulia, Sp.OG',
+  contactPhone: '+62 812-2787-5478',
   whatsappMessage: 'Halo, saya ingin mengetahui lebih lanjut tentang SPRIN RUN 2027.',
   registrationUrl: '#registration',
   labels: {
@@ -20,12 +22,18 @@ export const site = {
   },
   navigation: [
     { label: 'Beranda', href: '#home' },
-    { label: 'Race', href: '#race' },
+    { label: 'Kategori', href: '#race' },
     { label: 'Tentang', href: '#about' },
     { label: 'Race Kit', href: '#race-kit' },
     { label: 'Rute', href: '#route' },
     { label: 'Rundown', href: '#rundown' },
     { label: 'FAQ', href: '#faq' },
+  ],
+  primaryNavigation: [
+    { label: 'Tentang', href: '#about' },
+    { label: 'Kategori', href: '#race' },
+    { label: 'Rute', href: '#route' },
+    { label: 'Rundown', href: '#rundown' },
   ],
 } as const;
 

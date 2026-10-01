@@ -44,7 +44,7 @@ export function Footer() {
           </nav>
           <div>
             <h2 className="mb-4 font-bold">Kontak</h2>
-            <a href="/kontak/" className="text-sm text-off-white/60 hover:text-off-white">Informasi kanal resmi</a>
+            <a href="/kontak/" className="text-sm text-off-white/60 hover:text-off-white">{site.contactName}<br />{site.contactPhone}</a>
           </div>
         </div>
         <div className="mt-10 flex flex-col gap-3 border-t border-off-white/15 pt-5 text-xs text-off-white/60 sm:flex-row sm:items-center sm:justify-between">

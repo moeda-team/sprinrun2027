@@ -16,7 +16,7 @@ const rundown = [
 
 export function RundownSection() {
   return (
-    <section id="rundown" className="bg-paper pb-16 pt-8 text-ink sm:pb-24 sm:pt-12">
+    <section id="rundown" className="bg-paper pb-8 pt-8 text-ink sm:pb-12 sm:pt-12">
       <Container data-reveal>
         <div className="mx-auto max-w-5xl">
           <div className="max-w-xl">

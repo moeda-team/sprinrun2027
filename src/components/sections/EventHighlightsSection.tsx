@@ -1,6 +1,13 @@
 import { Container } from '@/components/ui/Container';
 import { Picture } from '@/components/ui/Picture';
 
+const lifePhases = [
+  { title: 'Remaja', description: 'Edukasi kesehatan reproduksi, skrining anemia, dan vaksinasi HPV untuk mencegah kanker serviks.' },
+  { title: 'Dewasa & prakonsepsi', description: 'Persiapan kesehatan dan gizi sebelum kehamilan agar ibu siap mengandung.' },
+  { title: 'Kehamilan', description: 'Pendampingan dan pemantauan rutin demi menjaga kesehatan ibu dan janin.' },
+  { title: 'Persalinan & nifas', description: 'Persalinan yang aman, respons darurat cepat, serta perawatan pascamelahirkan.' },
+];
+
 export function EventHighlightsSection() {
   return (
     <section id="about" className="bg-off-white pb-8 pt-16 text-deep-green sm:pb-12 sm:pt-24">
@@ -45,6 +52,21 @@ export function EventHighlightsSection() {
               <p className="mt-4 leading-relaxed text-deep-green/75">Event ini menjadi langkah konkret untuk ikut menyelamatkan perempuan Indonesia melalui edukasi reproduksi, vaksin HPV, persiapan kesehatan dan gizi sebelum kehamilan, hingga upaya menurunkan Angka Kematian Ibu (AKI).</p>
             </article>
           </div>
+        </div>
+        <div className="mt-8 rounded-2xl border border-deep-green/10 bg-white p-7 sm:p-10" data-reveal>
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[.35em] text-hot-pink">PENDEKATAN SPRIN</p>
+            <h2 className="font-display mt-4 text-3xl uppercase italic leading-tight tracking-[-.03em] text-deep-green sm:text-4xl">PENDAMPINGAN DI SETIAP FASE KEHIDUPAN</h2>
+          </div>
+          <ol className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {lifePhases.map((phase, index) => (
+              <li key={phase.title} className="rounded-xl bg-soft-mint/35 p-5">
+                <span className="font-display text-3xl italic text-hot-pink">0{index + 1}</span>
+                <h3 className="mt-3 font-extrabold text-deep-green">{phase.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-deep-green/70">{phase.description}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </Container>
     </section>

@@ -8,7 +8,7 @@ const hosts = [
 
 export function HostsSection() {
   return (
-    <section aria-labelledby="hosts-title" className="bg-paper py-12 sm:py-16">
+    <section aria-labelledby="hosts-title" className="bg-paper pb-12 pt-4 sm:pb-16 sm:pt-6">
       <Container>
         <h2 id="hosts-title" className="text-center text-xs font-extrabold uppercase tracking-[.3em] text-deep-green/65">
           Hosted by
