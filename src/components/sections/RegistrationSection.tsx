@@ -1,5 +1,6 @@
 import { Container } from '@/components/ui/Container';
 import { Picture } from '@/components/ui/Picture';
+import { site } from '@/config/site';
 
 export function RegistrationSection() {
   return (
@@ -12,7 +13,7 @@ export function RegistrationSection() {
           <h2 className="font-display mt-4 text-[clamp(2.8rem,5vw,4.4rem)] uppercase italic leading-[.84] tracking-[-.04em]">SIAP UNTUK MELANGKAH<br className="hidden sm:block"/> LEBIH JAUH?</h2>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-off-white/75 sm:text-base">Jangan lewatkan kesempatan untuk menjadi bagian dari SPRIN RUN 2027. Ajak teman, keluarga, dan komunitasmu!</p>
         </div>
-        <a href="/kontak/" className="focus-ring inline-flex min-h-14 shrink-0 items-center justify-center gap-5 rounded-full bg-hot-pink px-8 font-extrabold text-off-white transition hover:bg-forest-green">Daftar Sekarang <span aria-hidden="true">→</span></a>
+        <a href={site.registrationUrl} target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex min-h-14 shrink-0 items-center justify-center gap-5 rounded-full bg-hot-pink px-8 font-extrabold text-off-white transition hover:bg-forest-green">Daftar Sekarang <span aria-hidden="true">→</span></a>
       </Container>
     </section>
   );

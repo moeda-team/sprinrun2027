@@ -4,6 +4,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com',
   whatsappNumber: '6280000000000',
   whatsappMessage: 'Halo, saya ingin mengetahui lebih lanjut.',
+  registrationUrl: 'https://www.lowkeythings.my.id',
   labels: {
     menu: 'Menu',
     skipLink: 'Lewati ke konten',
