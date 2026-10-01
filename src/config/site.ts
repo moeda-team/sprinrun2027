@@ -3,7 +3,7 @@ export const site = {
   description: 'Ajang lari untuk bergerak lebih sehat, lebih kuat, dan lebih terhubung.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sprinrun2027.vercel.app',
   eventDate: 'Minggu, 17 Januari 2027',
-  venue: 'Venue akan diumumkan',
+  venue: 'Kantor Gubernur Jawa Tengah',
   routeStartMapUrl: 'https://www.google.com/maps/search/?api=1&query=-6.9931,110.4213',
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER,
   whatsappMessage: 'Halo, saya ingin mengetahui lebih lanjut tentang SPRIN RUN 2027.',

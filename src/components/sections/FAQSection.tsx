@@ -1,7 +1,7 @@
 import { Container } from '@/components/ui/Container';
 
 const questions = [
-  ['Kapan dan di mana SPRIN RUN 2027 diselenggarakan?', 'SPRIN RUN 2027 berlangsung pada Minggu, 17 Januari 2027. Venue akan diumumkan melalui kanal resmi setelah dikonfirmasi.'],
+  ['Kapan dan di mana SPRIN RUN 2027 diselenggarakan?', 'SPRIN RUN 2027 berlangsung pada Minggu, 17 Januari 2027 di Kantor Gubernur Jawa Tengah.'],
   ['Apa saja kategori yang tersedia?', 'SPRIN RUN menyediakan kategori 5K dan 10K. Pilih jarak yang paling sesuai dengan target dan pengalaman larimu.'],
   ['Berapa biaya pendaftaran?', 'Harga, periode early bird, dan batas akhir pendaftaran akan diumumkan saat registrasi dibuka.'],
   ['Apakah ada batasan usia?', 'Peserta di bawah usia 17 tahun perlu didampingi dan didaftarkan oleh orang tua atau wali.'],
