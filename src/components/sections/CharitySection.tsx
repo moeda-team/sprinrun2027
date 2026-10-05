@@ -17,7 +17,7 @@ export function CharitySection() {
             <h2 className="font-display mt-6 max-w-3xl text-[clamp(2.8rem,6.5vw,5.75rem)] uppercase italic leading-[.88] tracking-[-.04em]">
               SETIAP LANGKAH DAPAT MENJADI KEBAIKAN YANG LEBIH BESAR
             </h2>
-            <p className="mt-7 max-w-2xl text-base leading-relaxed text-off-white/75 sm:text-lg">
+            <p className="body-copy mt-7 max-w-2xl text-base leading-relaxed text-off-white/75 sm:text-lg">
               Melalui program charity, masyarakat dapat memberikan dukungan tambahan untuk membantu rangkaian kegiatan sosial dan kesehatan dalam semangat BELA KARTINI, termasuk:
             </p>
             <ul className="mt-6 flex flex-wrap gap-3">
@@ -29,7 +29,7 @@ export function CharitySection() {
             </ul>
             <blockquote className="mt-9 border-l-4 border-hot-pink pl-5">
               <p className="font-display text-3xl uppercase italic leading-none text-blush-pink sm:text-4xl">Tidak harus besar untuk berarti.</p>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-off-white/70 sm:text-base">
+              <p className="body-copy mt-3 max-w-xl text-sm leading-relaxed text-off-white/70 sm:text-base">
                 Ketika dilakukan bersama, langkah kecil dapat menjadi dukungan berarti bagi mereka yang membutuhkan.
               </p>
             </blockquote>
@@ -40,7 +40,7 @@ export function CharitySection() {
             <h3 id="charity-donate-title" className="font-display mt-4 text-4xl uppercase italic leading-[.9] text-deep-green sm:text-5xl">
               MARI BERBAGI
             </h3>
-            <p className="mt-4 text-sm leading-relaxed text-deep-green/70 sm:text-base">
+            <p className="body-copy mt-4 text-sm leading-relaxed text-deep-green/70 sm:text-base">
               Informasi resmi untuk donasi akan diumumkan segera.
             </p>
 
@@ -55,14 +55,14 @@ export function CharitySection() {
 
             <div className="mt-6 border-t border-dashed border-deep-green/25 pt-6">
               <h4 className="font-bold">Donasi melalui QRIS</h4>
-              <p className="mt-2 text-sm leading-relaxed text-deep-green/65">Kode QRIS akan tersedia setelah kanal donasi resmi dibuka.</p>
+              <p className="body-copy mt-2 text-sm leading-relaxed text-deep-green/65">Kode QRIS akan tersedia setelah kanal donasi resmi dibuka.</p>
               <div className="mt-4 grid aspect-square w-36 place-items-center rounded-xl border-2 border-dashed border-deep-green/25 bg-deep-green/[.03] px-4 text-center text-xs font-semibold text-deep-green/45 sm:w-40" aria-label="QRIS segera tersedia">
                 QRIS SEGERA TERSEDIA
               </div>
             </div>
           </aside>
 
-          <p className="border-t border-off-white/20 pt-5 text-sm leading-relaxed text-off-white/65 lg:col-span-2">
+          <p className="body-copy border-t border-off-white/20 pt-5 text-sm leading-relaxed text-off-white/65 lg:col-span-2">
             Setiap donasi akan menjadi bagian dari dukungan terhadap rangkaian program charity SPRIN RUN 2027.
           </p>
         </div>

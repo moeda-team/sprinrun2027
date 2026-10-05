@@ -46,7 +46,7 @@ export function RaceSection() {
             <article key={title} className="group max-w-xs">
               <div className="text-deep-green transition-colors duration-300 group-hover:text-hot-pink"><Icon /></div>
               <h2 className="font-display mt-5 text-2xl uppercase leading-[0.95] tracking-wide text-deep-green sm:text-[1.7rem]">{title}</h2>
-              <p className="mt-5 text-sm leading-relaxed text-deep-green/65">{description}</p>
+              <p className="body-copy mt-5 text-sm leading-relaxed text-deep-green/65">{description}</p>
             </article>
           ))}
         </div>
@@ -56,7 +56,7 @@ export function RaceSection() {
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-deep-green/45">RACE CATEGORY</p>
             <h2 className="font-display mt-7 text-[clamp(3.5rem,5vw,5rem)] uppercase italic leading-[0.78] tracking-[-0.04em] text-deep-green sm:text-[5rem]">CHOOSE<br />YOUR CHALLENGE</h2>
             <div className="mt-8 h-1 w-14 bg-hot-pink" />
-            <p className="mt-7 text-base leading-relaxed text-deep-green/70">Pilih kategori 10K atau 5K. Keduanya tersedia untuk peserta Umum dan Master.</p>
+            <p className="body-copy mt-7 text-base leading-relaxed text-deep-green/70">Pilih kategori 10K atau 5K. Keduanya tersedia untuk peserta Umum dan Master.</p>
             <a href="#registration" className="focus-ring group mt-8 inline-flex items-center gap-4 border-b-2 border-deep-green pb-2 font-bold text-deep-green transition-colors hover:border-hot-pink hover:text-hot-pink">Lihat Detail Race <ArrowIcon /></a>
           </div>
 

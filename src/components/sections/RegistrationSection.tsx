@@ -19,7 +19,7 @@ export function RegistrationSection() {
           <h2 className="font-display max-w-[10ch] text-[clamp(3.25rem,10vw,7.5rem)] uppercase italic leading-[.88] tracking-[-.04em]">
             Siap melangkah lebih jauh?
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-off-white/75 sm:text-lg">
+          <p className="body-copy mt-5 max-w-2xl text-base leading-relaxed text-off-white/75 sm:text-lg">
             Pilih kategori 5K atau 10K dan cek harga tiket yang tersedia. Siapkan dirimu untuk berlari sambil mendukung kesehatan perempuan Indonesia.
           </p>
         </div>
@@ -48,7 +48,7 @@ export function RegistrationSection() {
           ))}
         </div>
 
-        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-off-white/75">
+        <p className="body-copy mt-4 max-w-3xl text-sm leading-relaxed text-off-white/75">
           <strong className="text-blush-pink">Tenaga kesehatan:</strong> gunakan email yang terdaftar di Plataran Sehat saat mendaftar kategori SKP.
         </p>
 
@@ -62,7 +62,7 @@ export function RegistrationSection() {
           ))}
         </ol>
 
-        <p className="mt-9 max-w-3xl text-sm leading-relaxed text-off-white/70">
+        <p className="body-copy mt-9 max-w-3xl text-sm leading-relaxed text-off-white/70">
           Harga ditampilkan sesuai periode tiket. Ikuti kanal resmi SPRIN RUN untuk informasi pendaftaran dan pembayaran.
         </p>
       </Container>

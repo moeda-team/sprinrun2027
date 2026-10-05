@@ -42,7 +42,7 @@ export function RouteSection() {
           <div className="max-w-md lg:justify-self-end">
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-ink">Explore The Course</p>
             <h2 className="font-display mt-4 text-[clamp(3.5rem,7vw,6.4rem)] uppercase italic leading-[.72] tracking-[-.055em] text-ink">FIND YOUR<br /><span className="text-hot-pink">FINISH LINE</span></h2>
-            <p className="mt-7 text-base leading-relaxed text-ink/70">Pilih kategori untuk melihat gambaran jalur yang akan kamu taklukkan. Rute final akan diumumkan setelah verifikasi pihak terkait.</p>
+            <p className="body-copy mt-7 text-base leading-relaxed text-ink/70">Pilih kategori untuk melihat gambaran jalur yang akan kamu taklukkan. Rute final akan diumumkan setelah verifikasi pihak terkait.</p>
 
             <div className="mt-8 inline-flex rounded-full border border-line bg-soft-mint/50 p-1" role="tablist" aria-label="Pilih rute perlombaan">
               {(Object.keys(routeDetails) as RouteKey[]).map((route) => {
@@ -74,8 +74,8 @@ export function RouteSection() {
                   <span className="mt-2 block text-xs font-bold uppercase tracking-[.16em] text-ink/60">Flag off</span>
                 </div>
               </div>
-              <p className="mt-6 max-w-sm text-sm leading-relaxed text-ink/70">{detail.description}</p>
-              <p className="mt-3 max-w-sm text-sm font-semibold leading-relaxed text-ink/70">Rute mengikuti jalur resmi SPRIN RUN yang telah dipetakan.</p>
+              <p className="body-copy mt-6 max-w-sm text-sm leading-relaxed text-ink/70">{detail.description}</p>
+              <p className="body-copy mt-3 max-w-sm text-sm font-semibold leading-relaxed text-ink/70">Rute mengikuti jalur resmi SPRIN RUN yang telah dipetakan.</p>
               <a href={site.routeStartMapUrl} target="_blank" rel="noopener noreferrer" className="focus-ring mt-7 inline-flex min-h-11 items-center rounded-full border-2 border-deep-green px-5 text-sm font-extrabold text-deep-green transition hover:bg-deep-green hover:text-off-white">Lihat Titik Start di Google Maps <span aria-hidden="true" className="ml-2">↗</span></a>
               <p className="mt-2 text-xs text-ink/55">Titik start/finish perkiraan; detail lokasi final akan diumumkan.</p>
             </div>

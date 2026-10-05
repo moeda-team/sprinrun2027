@@ -29,7 +29,7 @@ export function Hero() {
             <span className="block whitespace-nowrap text-off-white">Saves a Life</span>
           </h1>
           <div className="hero-fade-up hero-delay-2 mt-9 h-1 w-44 bg-off-white sm:w-64" />
-          <p className="hero-fade-up hero-delay-2 mt-7 max-w-md text-base font-medium leading-relaxed text-off-white/85 sm:text-lg">
+          <p className="body-copy hero-fade-up hero-delay-2 mt-7 max-w-md text-base font-medium leading-relaxed text-off-white/85 sm:text-lg">
             {site.description}
           </p>
           <div className="hero-fade-up hero-delay-3 mt-8 flex flex-wrap gap-x-9 gap-y-5 text-sm font-semibold uppercase tracking-wide text-off-white">

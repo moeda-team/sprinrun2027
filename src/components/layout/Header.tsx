@@ -4,10 +4,12 @@ import { site } from '@/config/site';
 import { Container } from '@/components/ui/Container';
 
 export function Header() {
+  const homeSectionHref = (href: string) => (href.startsWith('#') ? `/${href}` : href);
+
   return (
     <header className="absolute inset-x-0 top-0 z-20 text-off-white">
       <Container className="flex min-h-24 items-center justify-between gap-6">
-        <Link href="#home" className="focus-ring flex items-center">
+        <Link href="/#home" className="focus-ring flex items-center">
           <Image
             src="/images/logo-with-border.webp"
             alt="Sprin Run 2027"
@@ -28,27 +30,27 @@ export function Header() {
             {site.primaryNavigation.map((item) => (
               <Link
                 className="focus-ring block rounded px-3 py-2 text-sm font-semibold text-off-white hover:bg-off-white/10"
-                href={item.href}
+                href={homeSectionHref(item.href)}
                 key={item.href}
               >
                 {item.label}
               </Link>
             ))}
-            <Link href={site.registrationUrl} className="focus-ring mt-2 block rounded-full bg-hot-pink px-3 py-2 text-center text-sm font-extrabold text-off-white hover:bg-forest-green">Info Pendaftaran</Link>
+            <Link href={homeSectionHref(site.registrationUrl)} className="focus-ring mt-2 block rounded-full bg-hot-pink px-3 py-2 text-center text-sm font-extrabold text-off-white hover:bg-forest-green">Info Pendaftaran</Link>
           </nav>
         </details>
         <nav aria-label="Navigasi utama" className="hidden items-center gap-5 lg:gap-8 md:flex">
             {site.primaryNavigation.map((item) => (
               <Link
               className="focus-ring text-sm font-semibold text-off-white/85 transition-colors hover:text-off-white hover:underline hover:decoration-2 hover:decoration-hot-pink"
-              href={item.href}
+              href={homeSectionHref(item.href)}
               key={item.href}
             >
               {item.label}
             </Link>
           ))}
         </nav>
-        <a href="#registration" className="focus-ring hidden rounded-full bg-hot-pink px-4 py-3 text-sm font-extrabold text-off-white transition hover:bg-forest-green md:inline-flex">Info Pendaftaran</a>
+        <Link href={homeSectionHref(site.registrationUrl)} className="focus-ring hidden rounded-full bg-hot-pink px-4 py-3 text-sm font-extrabold text-off-white transition hover:bg-forest-green md:inline-flex">Info Pendaftaran</Link>
       </Container>
     </header>
   );

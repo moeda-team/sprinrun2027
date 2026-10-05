@@ -20,13 +20,13 @@ export function FAQSection() {
             <p className="text-xs font-bold uppercase tracking-[.35em] text-deep-green/45">FAQ</p>
             <h2 className="font-display mt-6 text-[clamp(3rem,5vw,4.7rem)] uppercase italic leading-[.83] tracking-[-.04em] text-deep-green">PERTANYAAN YANG SERING DITANYA</h2>
             <div className="mt-6 h-1 w-12 bg-hot-pink" />
-            <p className="mt-6 leading-relaxed text-deep-green/70">Masih ada pertanyaan? Cek daftar pertanyaan yang paling sering ditanyakan oleh peserta.</p>
+            <p className="body-copy mt-6 leading-relaxed text-deep-green/70">Masih ada pertanyaan? Cek daftar pertanyaan yang paling sering ditanyakan oleh peserta.</p>
           </div>
           <div className="divide-y divide-deep-green/15">
             {questions.map(([question, answer]) => (
               <details key={question} className="group py-4">
                 <summary className="focus-ring flex cursor-pointer list-none items-center justify-between gap-5 font-bold marker:hidden">{question}<span aria-hidden="true" className="text-2xl leading-none transition-transform group-open:rotate-45">+</span></summary>
-                <p className="max-w-2xl pb-2 pr-10 pt-3 text-sm leading-relaxed text-deep-green/65">{answer}</p>
+                <p className="body-copy max-w-2xl pb-2 pr-10 pt-3 text-sm leading-relaxed text-deep-green/65">{answer}</p>
               </details>
             ))}
           </div>

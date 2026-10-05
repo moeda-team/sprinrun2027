@@ -15,7 +15,7 @@ export default function PesertaPage() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-blush-pink">SPRIN RUN 2027</p>
           <h1 className="mt-3 font-display text-5xl uppercase italic tracking-tight sm:text-6xl">Daftar Peserta</h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-off-white/75 sm:text-lg">Temukan peserta yang telah menyelesaikan pembayaran untuk {site.eventDate}.</p>
+          <p className="body-copy mt-5 max-w-2xl text-base leading-relaxed text-off-white/75 sm:text-lg">Temukan peserta yang telah menyelesaikan pembayaran untuk {site.eventDate}.</p>
         </div>
       </section>
       <section className="pb-20 pt-10 sm:pb-28 sm:pt-14">

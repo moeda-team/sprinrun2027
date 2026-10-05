@@ -19,7 +19,7 @@ export function RaceKitSection() {
             <p className="text-xs font-bold uppercase tracking-[.35em] text-deep-green/45">RACE BENEFITS</p>
             <h2 className="font-display mt-6 text-[clamp(3rem,5vw,4.7rem)] uppercase italic leading-[.83] tracking-[-.04em] text-deep-green">BENEFITS</h2>
             <div className="mt-6 h-1 w-12 bg-hot-pink" />
-            <p className="mt-6 max-w-sm leading-relaxed text-deep-green/70">Setiap peserta kategori 5K dan 10K mendapatkan benefit berikut.</p>
+            <p className="body-copy mt-6 max-w-sm leading-relaxed text-deep-green/70">Setiap peserta kategori 5K dan 10K mendapatkan benefit berikut.</p>
             <a href="#faq" className="focus-ring mt-7 inline-flex items-center gap-3 border-b-2 border-deep-green pb-2 font-bold">Lihat Detail Race Kit <span aria-hidden="true">→</span></a>
           </div>
           <div>
@@ -41,7 +41,7 @@ export function RaceKitSection() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[.35em] text-deep-green/45">RACE KIT</p>
             <h3 className="font-display mt-4 text-3xl uppercase italic leading-tight text-deep-green">KOLEKSI EKSKLUSIF SPRIN RUN 2027</h3>
-            <p className="mt-4 leading-relaxed text-deep-green/70">Jersey event dan medali finisher dengan desain eksklusif.</p>
+            <p className="body-copy mt-4 leading-relaxed text-deep-green/70">Jersey event dan medali finisher dengan desain eksklusif.</p>
           </div>
           <div>
             <Picture src="/images/race-kit.png" alt="Kaos event Sprin Run berwarna hijau serta medali finisher dengan pita hijau dan pink." width={1672} height={941} sizes="(min-width: 1024px) 58vw, 100vw" className="aspect-[1.78] w-full rounded-xl object-cover" />

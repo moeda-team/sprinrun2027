@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-[1.3fr_.65fr_1fr] sm:gap-12">
           <div className="max-w-sm">
             <a href="#home" className="font-display text-2xl uppercase italic tracking-tight">SPRIN RUN <span className="text-off-white">2027</span></a>
-            <p className="mt-4 text-sm leading-relaxed text-off-white/60">Lebih dari sekadar lari, SPRIN RUN 2027 adalah cerita untuk melangkah lebih jauh, lebih kuat, dan lebih terhubung.</p>
+            <p className="body-copy mt-4 text-sm leading-relaxed text-off-white/60">Lebih dari sekadar lari, SPRIN RUN 2027 adalah cerita untuk melangkah lebih jauh, lebih kuat, dan lebih terhubung.</p>
             <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
               <a
                 href="https://www.instagram.com/sprinrun2027"

@@ -8,7 +8,7 @@ export default function KontakPage() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <p className="text-xs font-bold uppercase tracking-[.35em] text-hot-pink">Kontak</p>
         <h1 className="font-display mt-5 text-5xl uppercase italic">Kanal Resmi</h1>
-        <p className="mt-6 max-w-2xl leading-relaxed text-deep-green/70">Untuk informasi SPRIN RUN 2027, hubungi kontak resmi berikut:</p>
+        <p className="body-copy mt-6 max-w-2xl leading-relaxed text-deep-green/70">Untuk informasi SPRIN RUN 2027, hubungi kontak resmi berikut:</p>
         <address className="mt-7 not-italic">
           <p className="font-bold">{site.contactName}</p>
           <a href={`tel:${site.whatsappNumber}`} className="mt-1 inline-flex text-lg font-semibold text-hot-pink hover:underline">{site.contactPhone}</a>
