@@ -1,29 +1,13 @@
 import { Container } from '@/components/ui/Container';
 import { Picture } from '@/components/ui/Picture';
 
-const steps = ['Pilih kategori', 'Isi data peserta', 'Lakukan pembayaran', 'Terima e-ticket'];
 const ticketGroups = [
-  {
-    name: 'Early Bird Umum',
-    status: 'Tersedia',
-    deadline: 'Berlaku sampai 30 Oktober 2026, 23.59',
-    tickets: [
-      { distance: '5K', price: 'Rp200.000' },
-      { distance: '10K', price: 'Rp250.000' },
-    ],
-    expired: false,
-  },
-  {
-    name: 'SKP Early — khusus tenaga kesehatan',
-    status: 'Periode berakhir',
-    deadline: 'Berakhir 30 September 2026, 23.59',
-    tickets: [
-      { distance: '5K', price: 'Rp300.000' },
-      { distance: '10K', price: 'Rp350.000' },
-    ],
-    expired: true,
-  },
+  { name: 'Early Bird Umum', detail: 'Harga terendah', prices: ['Rp200.000', 'Rp250.000'] },
+  { name: 'Normal Umum', detail: 'Harga reguler', prices: ['Rp250.000', 'Rp300.000'] },
+  { name: 'SKP', detail: 'Khusus tenaga kesehatan', prices: ['Rp300.000', 'Rp350.000'], skp: true },
 ];
+
+const steps = ['Pilih kategori', 'Isi data peserta', 'Lakukan pembayaran', 'Terima e-ticket'];
 
 export function RegistrationSection() {
   return (
@@ -31,34 +15,56 @@ export function RegistrationSection() {
       <Picture src="/images/registration-runners.png" alt="" width={1672} height={941} sizes="100vw" className="absolute inset-0 h-full w-full object-cover object-top opacity-60" />
       <div aria-hidden="true" className="absolute inset-0 bg-deep-green/70" />
       <Container className="relative" data-reveal>
-        <div className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-[.35em] text-off-white">SIAP BERLARI?</p>
-          <h2 className="font-display mt-4 text-[clamp(2.8rem,5vw,4.4rem)] uppercase italic leading-[.84] tracking-[-.04em]">SIAP UNTUK MELANGKAH<br className="hidden sm:block"/> LEBIH JAUH?</h2>
-          <p className="mt-6 max-w-xl text-sm leading-relaxed text-off-white/75 sm:text-base">Pilih kategori 5K atau 10K dan cek harga tiket yang tersedia. Siapkan dirimu untuk berlari sambil mendukung kesehatan perempuan Indonesia.</p>
+        <div className="max-w-3xl">
+          <h2 className="font-display max-w-[10ch] text-[clamp(3.25rem,10vw,7.5rem)] uppercase italic leading-[.88] tracking-[-.04em]">
+            Siap melangkah lebih jauh?
+          </h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-off-white/75 sm:text-lg">
+            Pilih kategori 5K atau 10K dan cek harga tiket yang tersedia. Siapkan dirimu untuk berlari sambil mendukung kesehatan perempuan Indonesia.
+          </p>
         </div>
-        <div className="mt-10 grid gap-4 lg:grid-cols-2" aria-label="Harga tiket SPRIN RUN 2027">
-          {ticketGroups.map((group) => (
-            <article key={group.name} className={`rounded-2xl border p-5 sm:p-7 ${group.expired ? 'border-off-white/15 bg-deep-green/35 text-off-white/65' : 'border-soft-mint/40 bg-deep-green/55 text-off-white'}`}>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <h3 className="text-lg font-extrabold sm:text-xl">{group.name}</h3>
-                <span className={`rounded-full px-3 py-1 text-[.65rem] font-black uppercase tracking-[.12em] ${group.expired ? 'bg-off-white/10 text-off-white/65' : 'bg-soft-mint text-deep-green'}`}>{group.status}</span>
+
+        <div className="mt-10 grid grid-cols-2 gap-x-3 sm:grid-cols-[minmax(0,1.3fr)_repeat(2,minmax(0,1fr))] sm:gap-x-4" role="table" aria-label="Harga tiket SPRIN RUN 2027">
+          <div aria-hidden="true" className="hidden sm:block" />
+          <div role="columnheader" className="font-display flex items-baseline gap-2 rounded-t-xl bg-off-white px-3 py-3 text-4xl leading-none text-deep-green sm:px-5 sm:py-4 sm:text-6xl">
+            5K <span className="font-sans text-xs font-medium text-deep-green/65 sm:text-sm">kilometer</span>
+          </div>
+          <div role="columnheader" className="font-display flex items-baseline gap-2 rounded-t-xl bg-hot-pink px-3 py-3 text-4xl leading-none text-white sm:px-5 sm:py-4 sm:text-6xl">
+            10K <span className="font-sans text-xs font-medium text-white/80 sm:text-sm">kilometer</span>
+          </div>
+
+          {ticketGroups.map((group, index) => (
+            <div key={group.name} role="row" className="col-span-2 grid grid-cols-2 items-center gap-x-3 border-t border-off-white/25 py-4 sm:col-span-3 sm:grid-cols-[minmax(0,1.3fr)_repeat(2,minmax(0,1fr))] sm:gap-x-4 sm:py-5">
+              <div role="rowheader" className={`col-span-2 pb-2 sm:col-span-1 sm:pb-0 ${group.skp ? 'text-yellow-200' : ''}`}>
+                <strong className="block text-base font-semibold sm:text-xl">{group.name}</strong>
+                <span className="text-sm text-off-white/65">{group.detail}</span>
               </div>
-              <p className="mt-2 text-xs font-semibold text-off-white/60">{group.deadline}</p>
-              <dl className="mt-5 grid grid-cols-2 gap-3">
-                {group.tickets.map((ticket) => (
-                  <div key={ticket.distance} className="rounded-xl border border-off-white/15 bg-black/10 px-4 py-3">
-                    <dt className="text-xs font-bold uppercase tracking-[.15em] text-off-white/60">{ticket.distance}</dt>
-                    <dd className="mt-1 text-xl font-black tabular-nums sm:text-2xl">{ticket.price}</dd>
-                  </div>
-                ))}
-              </dl>
-            </article>
+              {group.prices.map((price, priceIndex) => (
+                <div key={priceIndex} role="cell" className={`font-display flex items-baseline rounded-sm px-3 py-3 text-[clamp(1.65rem,4vw,2.75rem)] leading-none sm:px-5 sm:py-4 ${group.skp ? 'bg-yellow-200/15' : 'bg-off-white/10'}`}>
+                  <span className="mr-1 font-sans text-xs font-medium text-off-white/65 sm:text-sm">Rp</span>{price.replace('Rp', '')}
+                </div>
+              ))}
+            </div>
           ))}
         </div>
-        <ol className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, index) => <li key={step} className="flex items-center gap-3 rounded-xl border border-off-white/20 bg-deep-green/30 px-4 py-3 text-sm font-bold"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-hot-pink text-xs">{index + 1}</span>{step}</li>)}
+
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-off-white/75">
+          <strong className="text-yellow-200">Tenaga kesehatan:</strong> gunakan email yang terdaftar di Plataran Sehat saat mendaftar kategori SKP.
+        </p>
+
+        <ol className="mt-12 grid list-none grid-cols-2 gap-x-4 gap-y-7 p-0 sm:mt-14 sm:grid-cols-4">
+          {steps.map((step, index) => (
+            <li key={step} className="relative pt-9 text-sm font-semibold sm:pr-3">
+              <span aria-hidden="true" className="absolute left-0 top-0 grid h-7 w-7 place-items-center rounded-full bg-hot-pink text-xs text-white">{index + 1}</span>
+              {index < steps.length - 1 && <span aria-hidden="true" className={`absolute left-7 right-0 top-[13px] border-t-2 border-dashed border-off-white/35 ${index === 1 ? 'hidden sm:block' : ''}`} />}
+              <span className="relative">{step}</span>
+            </li>
+          ))}
         </ol>
-        <p className="mt-6 text-sm font-semibold text-soft-mint">Informasi harga ditampilkan sesuai periode tiket. Ikuti kanal resmi SPRIN RUN untuk informasi pendaftaran dan pembayaran.</p>
+
+        <p className="mt-9 max-w-3xl text-sm leading-relaxed text-off-white/70">
+          Harga ditampilkan sesuai periode tiket. Ikuti kanal resmi SPRIN RUN untuk informasi pendaftaran dan pembayaran.
+        </p>
       </Container>
     </section>
   );

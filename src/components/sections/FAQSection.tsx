@@ -3,7 +3,7 @@ import { Container } from '@/components/ui/Container';
 const questions = [
   ['Kapan dan di mana SPRIN RUN 2027 diselenggarakan?', 'SPRIN RUN 2027 berlangsung pada Minggu, 17 Januari 2027 di Kantor Gubernur Jawa Tengah.'],
   ['Apa saja kategori yang tersedia?', 'SPRIN RUN menyediakan kategori 5K dan 10K. Pilih jarak yang paling sesuai dengan target dan pengalaman larimu.'],
-  ['Berapa biaya pendaftaran?', 'Early Bird Umum: Rp200.000 untuk 5K dan Rp250.000 untuk 10K, berlaku sampai 30 Oktober 2026 pukul 23.59. SKP Early khusus tenaga kesehatan sebesar Rp300.000 untuk 5K dan Rp350.000 untuk 10K telah berakhir pada 30 September 2026 pukul 23.59.'],
+  ['Berapa biaya pendaftaran?', 'Kategori Umum: Early Bird 5K Rp200.000 dan 10K Rp250.000; Normal 5K Rp250.000 dan 10K Rp300.000. Kategori SKP untuk tenaga kesehatan: 5K Rp300.000 dan 10K Rp350.000.'],
   ['Apakah ada batasan usia?', 'Peserta di bawah usia 17 tahun perlu didampingi dan didaftarkan oleh orang tua atau wali.'],
   ['Bagaimana cara mengambil race kit?', 'Jadwal dan lokasi pengambilan race kit akan diinformasikan kepada peserta terdaftar menjelang hari acara.'],
   ['Apakah pendaftaran dapat dibatalkan atau dialihkan?', 'Ketentuan refund dan pengalihan bib akan diumumkan bersamaan dengan syarat dan ketentuan pendaftaran.'],

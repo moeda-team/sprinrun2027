@@ -44,7 +44,7 @@ export function EventHighlightsSection() {
             <article className="rounded-2xl bg-deep-green p-7 text-off-white sm:p-9">
               <p className="text-xs font-bold uppercase tracking-[.3em] text-soft-mint">UNTUK TENAGA KESEHATAN</p>
               <h3 className="font-display mt-4 text-3xl uppercase italic leading-tight sm:text-4xl">BAGI PARA NAKES</h3>
-              <p className="mt-4 leading-relaxed text-off-white/80">Dengan mengikuti SPRIN RUN, para tenaga kesehatan (Nakes) akan mendapatkan Satuan Kredit Profesi (SKP). Nakes yang dimaksud antara lain Dokter Umum, Dokter Spesialis, Bidan, Perawat, Apoteker, dan lainnya.</p>
+              <p className="mt-4 leading-relaxed text-off-white/80">SKP tersedia untuk Dokter Spesialis Obstetri dan Ginekologi, Dokter Spesialis Penyakit Dalam, Dokter Spesialis Bedah, Dokter Spesialis Anestesiologi dan Terapi Intensif, Dokter Spesialis Patologi Klinik, Dokter Spesialis Patologi Anatomi, Dokter Gigi Spesialis Bedah Mulut dan Maksilofasial, Dokter, Dokter Gigi, Bidan Vokasi, Bidan Profesi, Perawat Vokasi, Ners, Tenaga Teknologi Laboratorium Medik, Apoteker, Psikolog Klinis, dan Penata Anestesi.</p>
             </article>
             <article className="rounded-2xl border border-deep-green/15 bg-white p-7 sm:p-9">
               <p className="text-xs font-bold uppercase tracking-[.3em] text-hot-pink">UNTUK SEMUA</p>

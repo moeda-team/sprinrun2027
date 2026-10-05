@@ -26,14 +26,12 @@ export const site = {
     { label: 'Tentang', href: '#about' },
     { label: 'Race Kit', href: '#race-kit' },
     { label: 'Rute', href: '#route' },
-    { label: 'Rundown', href: '#rundown' },
     { label: 'FAQ', href: '#faq' },
   ],
   primaryNavigation: [
     { label: 'Tentang', href: '#about' },
     { label: 'Kategori', href: '#race' },
     { label: 'Rute', href: '#route' },
-    { label: 'Rundown', href: '#rundown' },
   ],
 } as const;
 
