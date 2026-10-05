@@ -54,7 +54,7 @@ export function RouteSection() {
                     role="tab"
                     aria-selected={selected}
                     onClick={() => setActiveRoute(route)}
-                    className={`focus-ring rounded-full px-6 py-2.5 text-sm font-black transition ${selected ? routeDetails[route].selectedText : 'text-ink/60 hover:bg-white hover:text-ink'}`}
+                    className={`focus-ring rounded-full px-6 py-2.5 text-sm font-black transition ${selected ? routeDetails[route].selectedText : 'text-ink/60 hover:bg-off-white hover:text-ink'}`}
                     style={selected ? { backgroundColor: routeDetails[route].color } : undefined}
                   >
                     {route}

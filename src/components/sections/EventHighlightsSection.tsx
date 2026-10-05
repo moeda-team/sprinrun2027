@@ -46,14 +46,14 @@ export function EventHighlightsSection() {
               <h3 className="font-display mt-4 text-3xl uppercase italic leading-tight sm:text-4xl">BAGI PARA NAKES</h3>
               <p className="mt-4 leading-relaxed text-off-white/80">SKP tersedia untuk Dokter Spesialis Obstetri dan Ginekologi, Dokter Spesialis Penyakit Dalam, Dokter Spesialis Bedah, Dokter Spesialis Anestesiologi dan Terapi Intensif, Dokter Spesialis Patologi Klinik, Dokter Spesialis Patologi Anatomi, Dokter Gigi Spesialis Bedah Mulut dan Maksilofasial, Dokter, Dokter Gigi, Bidan Vokasi, Bidan Profesi, Perawat Vokasi, Ners, Tenaga Teknologi Laboratorium Medik, Apoteker, Psikolog Klinis, dan Penata Anestesi.</p>
             </article>
-            <article className="rounded-2xl border border-deep-green/15 bg-white p-7 sm:p-9">
+            <article className="rounded-2xl border border-deep-green/15 bg-off-white p-7 sm:p-9">
               <p className="text-xs font-bold uppercase tracking-[.3em] text-hot-pink">UNTUK SEMUA</p>
               <h3 className="font-display mt-4 text-3xl uppercase italic leading-tight text-deep-green sm:text-4xl">BAGI MASYARAKAT UMUM</h3>
               <p className="mt-4 leading-relaxed text-deep-green/75">Event ini menjadi langkah konkret untuk ikut menyelamatkan perempuan Indonesia melalui edukasi reproduksi, vaksin HPV, persiapan kesehatan dan gizi sebelum kehamilan, hingga upaya menurunkan Angka Kematian Ibu (AKI).</p>
             </article>
           </div>
         </div>
-        <div className="mt-8 rounded-2xl border border-deep-green/10 bg-white p-7 sm:p-10" data-reveal>
+        <div className="mt-8 rounded-2xl border border-deep-green/10 bg-off-white p-7 sm:p-10" data-reveal>
           <div className="max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-[.35em] text-hot-pink">PENDEKATAN SPRIN</p>
             <h2 className="font-display mt-4 text-3xl uppercase italic leading-tight tracking-[-.03em] text-deep-green sm:text-4xl">PENDAMPINGAN DI SETIAP FASE KEHIDUPAN</h2>
