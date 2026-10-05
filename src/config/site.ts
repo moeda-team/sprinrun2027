@@ -32,6 +32,7 @@ export const site = {
     { label: 'Tentang', href: '#about' },
     { label: 'Kategori', href: '#race' },
     { label: 'Rute', href: '#route' },
+    { label: 'Peserta', href: '/peserta/' },
   ],
 } as const;
 
