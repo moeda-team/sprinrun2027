@@ -7,7 +7,7 @@ export function Header() {
   const homeSectionHref = (href: string) => (href.startsWith('#') ? `/${href}` : href);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-off-white/10 bg-deep-green/95 text-off-white shadow-lg shadow-deep-green/10 backdrop-blur-sm">
+    <header className="absolute inset-x-0 top-0 z-20 text-off-white">
       <Container className="flex min-h-24 items-center justify-between gap-6">
         <Link href="/#home" className="focus-ring flex items-center">
           <Image
