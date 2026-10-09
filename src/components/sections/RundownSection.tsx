@@ -2,10 +2,10 @@ import { Container } from '@/components/ui/Container';
 
 const rundown = [
   { time: '04:30', activity: 'Registrasi ulang & pengambilan race pack', detail: 'Untuk peserta yang belum mengambil race pack.' },
-  { time: '04:45', activity: 'Ceremonial pembukaan', detail: 'Sambutan oleh Gubernur Jawa Tengah atau yang mewakili.' },
-  { time: '05:00', activity: 'Flag off kategori 10K', highlight: true },
-  { time: '05:15', activity: 'Sambutan Ketua Panitia SPRIN RUN 2027' },
-  { time: '05:30', activity: 'Flag off kategori 5K', highlight: true },
+  { time: '04:35', activity: 'Ceremonial pembukaan', detail: 'Sambutan oleh Gubernur Jawa Tengah atau yang mewakili.' },
+  { time: '04:45', activity: 'Flag off kategori 10K', highlight: true },
+  { time: '05:00', activity: 'Sambutan Ketua Panitia SPRIN RUN 2027' },
+  { time: '05:15', activity: 'Flag off kategori 5K', highlight: true },
   { time: '05:50', activity: 'Hiburan & finish line', detail: 'Pembagian medali dan refreshment.' },
   { time: '07:00', activity: 'Laporan & penerimaan hasil charity' },
   { time: '08:00', activity: 'Talkshow & edukasi kesehatan' },

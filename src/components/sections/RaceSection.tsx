@@ -29,8 +29,8 @@ const highlights = [
 ];
 
 const races = [
-  { distance: '10K', name: 'CHALLENGE RUN', flagOff: '05.00 WIB', category: 'Umum & *Master', image: '/images/race-10k.png', alt: 'Pelari melangkah di jalan kota saat matahari terbenam.' },
-  { distance: '5K', name: 'FUN RUN', flagOff: '05.30 WIB', category: 'Umum & *Master', image: '/images/race-5k.png', alt: 'Pelari menggunakan sepatu hijau dan merah muda di jalan saat matahari terbenam.' },
+  { distance: '10K', name: 'CHALLENGE RUN', flagOff: '04.45 WIB', category: 'Umum & *Master', image: '/images/race-10k.png', alt: 'Pelari melangkah di jalan kota saat matahari terbenam.' },
+  { distance: '5K', name: 'FUN RUN', flagOff: '05.15 WIB', category: 'Umum & *Master', image: '/images/race-5k.png', alt: 'Pelari menggunakan sepatu hijau dan merah muda di jalan saat matahari terbenam.' },
 ];
 
 function ArrowIcon() {

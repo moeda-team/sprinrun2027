@@ -4,21 +4,20 @@ import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Container } from '@/components/ui/Container';
 import { site } from '@/config/site';
-
-type RouteKey = '5K' | '10K';
+import type { RouteKey } from '@/config/routes';
 
 const routeDetails: Record<RouteKey, { description: string; distance: string; flagOff: string; color: string; selectedText: string }> = {
   '5K': {
     description: 'Rute yang ramah untuk dinikmati bersama teman, keluarga, dan langkah pertamamu menuju garis finis.',
     distance: '5,4',
-    flagOff: '05:30',
+    flagOff: '05.15',
     color: 'var(--color-hot-pink)',
     selectedText: 'text-off-white',
   },
   '10K': {
     description: 'Jarak lebih jauh untuk kamu yang siap menjaga ritme dan menaklukkan tantangan berikutnya.',
     distance: '10,1',
-    flagOff: '05:00',
+    flagOff: '04.45',
     color: 'var(--color-forest-green)',
     selectedText: 'text-off-white',
   },
@@ -76,8 +75,11 @@ export function RouteSection() {
               </div>
               <p className="body-copy mt-6 max-w-sm text-sm leading-relaxed text-ink/70">{detail.description}</p>
               <p className="body-copy mt-3 max-w-sm text-sm font-semibold leading-relaxed text-ink/70">Rute mengikuti jalur resmi SPRIN RUN yang telah dipetakan.</p>
-              <a href={site.routeStartMapUrl} target="_blank" rel="noopener noreferrer" className="focus-ring mt-7 inline-flex min-h-11 items-center rounded-full border-2 border-deep-green px-5 text-sm font-extrabold text-deep-green transition hover:bg-deep-green hover:text-off-white">Lihat Titik Start di Google Maps <span aria-hidden="true" className="ml-2">↗</span></a>
-              <p className="mt-2 text-xs text-ink/55">Titik start/finish perkiraan; detail lokasi final akan diumumkan.</p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a href={site.routeMapUrl} target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex min-h-11 items-center rounded-full border-2 border-deep-green px-5 text-sm font-extrabold text-deep-green transition hover:bg-deep-green hover:text-off-white">Lihat Rute di Google Maps <span aria-hidden="true" className="ml-2">↗</span></a>
+                <a href={site.routeStartMapUrl} target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex min-h-11 items-center rounded-full border-2 border-deep-green px-5 text-sm font-extrabold text-deep-green transition hover:bg-deep-green hover:text-off-white">Lihat Titik Start <span aria-hidden="true" className="ml-2">↗</span></a>
+              </div>
+              <p className="mt-2 text-xs text-ink/55">Detail rute final akan diumumkan setelah verifikasi.</p>
             </div>
           </div>
         </div>
