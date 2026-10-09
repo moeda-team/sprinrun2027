@@ -20,7 +20,7 @@ export function Hero() {
     <section id="home" className="relative isolate min-h-[760px] overflow-hidden bg-forest-green text-off-white lg:min-h-screen">
       <div className="absolute inset-0 -z-20 bg-forest-green" />
       <div className="absolute inset-0 -z-10 bg-[url('/images/hero.png')] bg-cover bg-[65%_center] bg-no-repeat sm:bg-center" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-deep-green/85 via-deep-green/35 to-transparent lg:from-deep-green/75 lg:via-deep-green/10" />
+      <div aria-hidden="true" className="hero-mobile-overlay absolute inset-0 -z-10 sm:hidden" />
       <Container className="flex min-h-[760px] items-center pb-12 pt-36 lg:min-h-screen lg:pb-16 lg:pt-28">
         <div className="max-w-3xl">
           <p className="hero-fade-up mb-5 text-xs font-bold uppercase tracking-[0.42em] text-soft-mint sm:text-sm">SPRIN RUN 2027</p>

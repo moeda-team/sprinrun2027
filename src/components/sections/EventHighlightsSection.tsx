@@ -14,8 +14,8 @@ export function EventHighlightsSection() {
       <Container>
         <div className="grid gap-6 lg:grid-cols-2" data-reveal>
           <article className="relative isolate overflow-hidden rounded-2xl bg-deep-green px-7 py-10 text-off-white sm:px-10 sm:py-14 lg:col-span-2 lg:grid lg:grid-cols-[1fr_.85fr] lg:items-center lg:gap-10">
-            <div className="absolute inset-0 -z-10 opacity-20">
-              <Picture src="/images/event-highlights.png" alt="" width={1672} height={941} sizes="100vw" className="h-full w-full object-cover" />
+            <div className="absolute inset-0 -z-10 opacity-25">
+              <Picture src="/images/registration-runners-photo.jpg" alt="" width={1920} height={1280} sizes="100vw" className="h-full w-full object-cover object-center" />
             </div>
             <div>
               <p className="text-xs font-bold uppercase tracking-[.35em] text-soft-mint">TENTANG SPRIN RUN</p>

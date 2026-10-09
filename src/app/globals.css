@@ -40,6 +40,9 @@ body {
   font-family: 'Arial Narrow', 'Roboto Condensed', Arial, sans-serif;
   font-stretch: condensed;
 }
+.hero-mobile-overlay {
+  background: linear-gradient(90deg, rgb(10 69 38 / 91%), rgb(10 69 38 / 78%) 60%, rgb(10 69 38 / 66%));
+}
 .body-copy {
   text-align: left;
 }

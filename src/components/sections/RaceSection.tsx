@@ -29,8 +29,8 @@ const highlights = [
 ];
 
 const races = [
-  { distance: '10K', name: 'CHALLENGE RUN', flagOff: '04.45 WIB', category: 'Umum & *Master', image: '/images/race-10k.png', alt: 'Pelari melangkah di jalan kota saat matahari terbenam.' },
-  { distance: '5K', name: 'FUN RUN', flagOff: '05.15 WIB', category: 'Umum & *Master', image: '/images/race-5k.png', alt: 'Pelari menggunakan sepatu hijau dan merah muda di jalan saat matahari terbenam.' },
+  { distance: '10K', name: 'CHALLENGE RUN', flagOff: '04.45 WIB', category: 'Umum & *Master', image: '/images/race-10k-photo.jpg', alt: 'Sekelompok pelari berlari menjauh di jalan Kota Lama.' },
+  { distance: '5K', name: 'FUN RUN', flagOff: '05.15 WIB', category: 'Umum & *Master', image: '/images/race-5k-photo.jpg', alt: 'Lima pelari berlari bersama di kawasan Kota Lama.' },
 ];
 
 function ArrowIcon() {
@@ -64,7 +64,7 @@ export function RaceSection() {
           <div className="grid gap-5 sm:grid-cols-2">
             {races.map((race) => (
               <a href="#registration" key={race.distance} className="group relative isolate min-h-[390px] overflow-hidden rounded-sm bg-deep-green text-off-white shadow-sm transition-transform duration-300 hover:-translate-y-1">
-                <Picture src={race.image} alt={race.alt} width={1774} height={887} sizes="(min-width: 1024px) 36vw, (min-width: 640px) 45vw, 92vw" className="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <Picture src={race.image} alt={race.alt} width={1920} height={1280} sizes="(min-width: 1024px) 36vw, (min-width: 640px) 45vw, 92vw" className="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-deep-green via-deep-green/80 to-deep-green/5" />
                 <div className="flex min-h-[390px] flex-col justify-end p-7 sm:p-8">
                   <p className="font-display text-[5rem] italic leading-[0.8] tracking-tight text-off-white">{race.distance}</p>

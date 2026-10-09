@@ -12,7 +12,7 @@ const steps = ['Pilih kategori', 'Isi data peserta', 'Lakukan pembayaran', 'Teri
 export function RegistrationSection() {
   return (
     <section id="registration" className="relative overflow-hidden bg-deep-green py-16 text-off-white sm:py-24">
-      <Picture src="/images/registration-runners.png" alt="" width={1672} height={941} sizes="100vw" className="absolute inset-0 h-full w-full object-cover object-top opacity-60" />
+      <Picture src="/images/community-runners.jpg" alt="" width={1920} height={1280} sizes="100vw" className="absolute inset-0 h-full w-full object-cover object-center opacity-60" />
       <div aria-hidden="true" className="absolute inset-0 bg-deep-green/70" />
       <Container className="relative" data-reveal>
         <div className="max-w-3xl">
