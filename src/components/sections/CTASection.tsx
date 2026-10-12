@@ -7,7 +7,7 @@ export function CTASection() {
         <p className="text-xs font-bold uppercase tracking-[.35em] text-off-white">SPRIN RUN 2027</p>
         <h2 className="font-display mx-auto mt-5 max-w-3xl text-[clamp(3.4rem,8vw,7rem)] uppercase italic leading-[.78] tracking-[-.05em]">SIAP UNTUK<br />GARIS FINIS?</h2>
         <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-off-white">Simpan tanggalnya, ajak teman larimu, dan pantau informasi pendaftaran resmi di halaman ini.</p>
-        <a href="#registration" className="focus-ring mt-9 inline-flex min-h-14 items-center justify-center rounded-full bg-deep-green px-8 font-extrabold text-off-white transition hover:bg-forest-green">Lihat Info Pendaftaran <span aria-hidden="true" className="ml-3">→</span></a>
+        <a href="https://www.lowkeythings.my.id/events/7974e196-52c5-4f77-830e-4d24c6250dfe" target="_blank" rel="noopener noreferrer" className="focus-ring mt-9 inline-flex min-h-14 items-center justify-center rounded-full bg-deep-green px-8 font-extrabold text-off-white transition hover:bg-forest-green">Daftar di Sini <span aria-hidden="true" className="ml-3">→</span></a>
       </Container>
     </section>
   );

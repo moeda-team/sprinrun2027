@@ -10,7 +10,7 @@ export const site = {
   contactName: 'dr. Radith Aulia, Sp.OG',
   contactPhone: '+62 812-2787-5478',
   whatsappMessage: 'Halo, saya ingin mengetahui lebih lanjut tentang SPRIN RUN 2027.',
-  registrationUrl: '#registration',
+  registrationUrl: 'https://www.lowkeythings.my.id/events/7974e196-52c5-4f77-830e-4d24c6250dfe',
   labels: {
     menu: 'Menu',
     skipLink: 'Lewati ke konten',

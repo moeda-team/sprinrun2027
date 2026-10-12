@@ -36,7 +36,7 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link href={homeSectionHref(site.registrationUrl)} className="focus-ring mt-2 block rounded-full bg-hot-pink px-3 py-2 text-center text-sm font-extrabold text-off-white hover:bg-forest-green">Info Pendaftaran</Link>
+            <a href={site.registrationUrl} target="_blank" rel="noopener noreferrer" className="focus-ring mt-2 block rounded-full bg-hot-pink px-3 py-2 text-center text-sm font-extrabold text-off-white hover:bg-forest-green">Daftar di Sini</a>
           </nav>
         </details>
         <nav aria-label="Navigasi utama" className="hidden items-center gap-5 lg:gap-8 md:flex">
@@ -50,7 +50,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link href={homeSectionHref(site.registrationUrl)} className="focus-ring hidden rounded-full bg-hot-pink px-4 py-3 text-sm font-extrabold text-off-white transition hover:bg-forest-green md:inline-flex">Info Pendaftaran</Link>
+        <a href={site.registrationUrl} target="_blank" rel="noopener noreferrer" className="focus-ring hidden rounded-full bg-hot-pink px-4 py-3 text-sm font-extrabold text-off-white transition hover:bg-forest-green md:inline-flex">Daftar di Sini</a>
       </Container>
     </header>
   );

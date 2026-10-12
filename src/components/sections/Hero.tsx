@@ -44,9 +44,9 @@ export function Hero() {
           </div>
           <EventCountdown />
           <div className="hero-fade-up hero-delay-4 mt-10 flex flex-wrap items-center gap-7">
-            <Button className="rounded-full px-7 font-extrabold tracking-wide shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03]" href={site.registrationUrl}>
-              {site.labels.heroAction} <ArrowIcon className="ml-3 h-5 w-5" />
-            </Button>
+            <a className="inline-flex min-h-11 items-center justify-center rounded-full bg-hot-pink px-7 py-3 font-extrabold tracking-wide text-off-white shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-forest-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hot-pink focus-visible:ring-offset-2" href={site.registrationUrl} target="_blank" rel="noopener noreferrer">
+              Daftar di Sini <ArrowIcon className="ml-3 h-5 w-5" />
+            </a>
             <a className="focus-ring group inline-flex items-center gap-3 font-semibold text-off-white transition-colors duration-300 hover:underline hover:decoration-2 hover:decoration-hot-pink" href="#about">
               Lihat Detail <ArrowIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>

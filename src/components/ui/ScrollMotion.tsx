@@ -38,10 +38,12 @@ export function ScrollMotion() {
 
   return (
     <a
-      href="#registration"
+      href="https://www.lowkeythings.my.id/events/7974e196-52c5-4f77-830e-4d24c6250dfe"
+      target="_blank"
+      rel="noopener noreferrer"
       className={`focus-ring fixed bottom-4 left-4 z-30 inline-flex min-h-12 items-center rounded-full bg-hot-pink px-5 text-sm font-extrabold text-off-white shadow-lg shadow-deep-green/30 transition-all duration-300 hover:bg-forest-green md:hidden ${showRegistrationCta ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'}`}
     >
-      Info Pendaftaran
+      Daftar di Sini
     </a>
   );
 }

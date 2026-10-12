@@ -65,6 +65,17 @@ export function RegistrationSection() {
         <p className="body-copy mt-9 max-w-3xl text-sm leading-relaxed text-off-white/70">
           Harga ditampilkan sesuai periode tiket. Ikuti kanal resmi SPRIN RUN untuk informasi pendaftaran dan pembayaran.
         </p>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <a
+            href="https://www.lowkeythings.my.id/events/7974e196-52c5-4f77-830e-4d24c6250dfe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-ring inline-flex min-h-14 items-center justify-center rounded-full bg-hot-pink px-10 text-base font-extrabold text-off-white shadow-lg shadow-hot-pink/30 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-blush-pink"
+          >
+            Daftar di Sini <span aria-hidden="true" className="ml-3">→</span>
+          </a>
+        </div>
       </Container>
     </section>
   );
