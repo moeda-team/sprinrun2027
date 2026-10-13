@@ -1,5 +1,5 @@
 import { Container } from '@/components/ui/Container';
-import { Picture } from '@/components/ui/Picture';
+import { RaceKitImage } from '@/components/sections/RaceKitImage';
 
 const benefits = [
   'Nomor BIB & Timing Chip',
@@ -37,15 +37,29 @@ export function RaceKitSection() {
             <p className="mt-4 text-sm leading-relaxed text-deep-green/60">*Medali finisher hanya diberikan kepada para finisher masing-masing kategori.</p>
           </div>
         </div>
-        <div className="mt-16 grid gap-8 border-t border-deep-green/10 pt-12 sm:grid-cols-[.7fr_1.3fr] sm:items-center">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[.35em] text-deep-green/45">RACE KIT</p>
-            <h3 className="font-display mt-4 text-3xl uppercase italic leading-tight text-deep-green">KOLEKSI EKSKLUSIF SPRIN RUN 2027</h3>
-            <p className="body-copy mt-4 leading-relaxed text-deep-green/70">Jersey event dan medali finisher dengan desain eksklusif.</p>
-          </div>
-          <div>
-            <Picture src="/images/race-kit.png" alt="Kaos event Sprin Run berwarna hijau serta medali finisher dengan pita hijau dan pink." width={1672} height={941} sizes="(min-width: 1024px) 58vw, 100vw" className="aspect-[1.78] w-full rounded-xl object-cover" />
-            <div className="mt-4 grid grid-cols-3 text-center text-xs font-extrabold text-deep-green sm:text-sm"><p>Jersey Event</p><p>Medali Finisher</p><p>Desain Eksklusif</p></div>
+        <div className="relative mt-16 overflow-hidden rounded-[2rem] bg-deep-green text-off-white sm:mt-20">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_90%_0%,rgba(204,40,111,.28),transparent_45%),linear-gradient(135deg,#0a4526,#062b19)]" />
+          <div className="relative grid lg:grid-cols-[.8fr_1.2fr]">
+            <div className="flex flex-col justify-center px-7 py-9 sm:px-10 sm:py-12 lg:px-12 lg:py-10">
+              <p className="text-xs font-bold uppercase tracking-[.35em] text-soft-mint">RACE KIT 2027</p>
+              <h3 className="font-display mt-5 max-w-lg text-4xl uppercase italic leading-[.95] tracking-tight sm:text-5xl">Koleksi eksklusif Sprin Run</h3>
+              <div className="mt-6 h-1 w-12 bg-hot-pink" />
+              <p className="mt-6 max-w-sm leading-relaxed text-off-white/75">Kenakan jersey kebanggaan dan dukung perjuangan perempuan Indonesia. Bawa semangat itu di setiap langkah, sekaligus ikut menyuarakan harapan untuk masa depan yang lebih sehat dan setara.</p>
+              <div className="mt-8 flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wider">
+                <span className="rounded-full border border-off-white/25 px-4 py-2">Jersey Event</span>
+                <span className="rounded-full border border-off-white/25 px-4 py-2">Medali Finisher</span>
+              </div>
+            </div>
+            <div className="grid gap-3 p-3 sm:grid-cols-[1.05fr_.95fr] sm:gap-4 sm:p-5 lg:pl-0">
+              <figure className="group relative min-h-64 overflow-hidden rounded-[1.4rem] bg-black/20 sm:min-h-[26rem]">
+                <RaceKitImage src="/images/medali-finisher.png" alt="Desain medali finisher Sprin Run 2027 dengan pita toska dan ilustrasi perjuangan perempuan." width={604} height={754} sizes="(min-width: 1024px) 34vw, (min-width: 640px) 48vw, 100vw" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" label="medali finisher" />
+                <figcaption className="absolute bottom-4 left-4 rounded-full bg-deep-green/85 px-4 py-2 text-xs font-bold uppercase tracking-[.15em] text-off-white backdrop-blur">Medali Finisher</figcaption>
+              </figure>
+              <figure className="group relative min-h-64 overflow-hidden rounded-[1.4rem] bg-off-white sm:min-h-[26rem]">
+                <RaceKitImage src="/images/jersey-event.png" alt="Desain jersey event Sprin Run 2027 berwarna toska, tampak depan dan belakang." width={942} height={707} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 43vw, 100vw" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" label="jersey event" />
+                <figcaption className="absolute bottom-4 left-4 rounded-full bg-deep-green px-4 py-2 text-xs font-bold uppercase tracking-[.15em] text-off-white">Jersey Event</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </Container>
