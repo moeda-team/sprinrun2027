@@ -14,7 +14,7 @@ export default function KontakPage() {
           <a href={`tel:${site.whatsappNumber}`} className="mt-1 inline-flex text-lg font-semibold text-hot-pink hover:underline">{site.contactPhone}</a>
         </address>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href={`https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(site.whatsappMessage)}`} className="focus-ring inline-flex rounded-full bg-hot-pink px-6 py-3 font-bold text-off-white transition hover:bg-forest-green">Hubungi via WhatsApp</a>
+          <a href={`https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(site.whatsappMessage)}`} className="focus-ring inline-flex rounded-full bg-hot-pink px-6 py-3 font-bold text-off-white transition-all hover:brightness-110">Hubungi via WhatsApp</a>
           <Link href="/#registration" className="focus-ring inline-flex rounded-full border border-deep-green/20 px-6 py-3 font-bold transition hover:bg-deep-green hover:text-off-white">Lihat Info Pendaftaran</Link>
         </div>
       </div>
