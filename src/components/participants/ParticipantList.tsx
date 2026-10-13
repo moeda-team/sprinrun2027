@@ -2,9 +2,17 @@
 
 import { useEffect, useState } from 'react';
 
+type CustomAnswer = {
+  label: string;
+  value: string;
+  name?: string;
+  [key: string]: unknown;
+};
+
 type Registration = {
   name: string;
   category: string;
+  custom_answers?: CustomAnswer[];
   city?: string;
   kota?: string;
   kabupaten?: string;
@@ -20,6 +28,23 @@ type RegistrationResponse = { data: Registration[]; total: number; page: number;
 const pageSize = 6;
 
 function getParticipantCity(participant: Registration): string {
+  if (Array.isArray(participant.custom_answers)) {
+    const answer = participant.custom_answers.find((item) => {
+      const label = (item.label || '').toLowerCase();
+      const name = (typeof item.name === 'string' ? item.name : '').toLowerCase();
+      return (
+        label.includes('kabupaten') ||
+        label.includes('kota') ||
+        name.includes('kabupaten') ||
+        name.includes('kota')
+      );
+    });
+    if (answer && answer.value != null) {
+      const val = String(answer.value).trim();
+      if (val) return val;
+    }
+  }
+
   const direct =
     participant.city ||
     participant.kota ||
