@@ -40,7 +40,7 @@ export function Footer() {
           </div>
           <nav aria-label="Menu footer">
             <h2 className="mb-4 font-bold">Menu</h2>
-            <ul className="space-y-2 text-sm text-off-white/60">{site.navigation.map((item) => <li key={item.href}><a className="hover:text-off-white" href={item.href}>{item.label}</a></li>)}</ul>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-off-white/60">{site.navigation.map((item) => <li key={item.href}><a className="hover:text-off-white" href={item.href}>{item.label}</a></li>)}</ul>
           </nav>
           <div>
             <h2 className="mb-4 font-bold">Kontak</h2>

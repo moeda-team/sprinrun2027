@@ -8,7 +8,7 @@ export function WhatsAppButton() {
   return (
     <a
       aria-label="Chat via WhatsApp"
-      className="focus-ring fixed bottom-5 right-5 z-20 inline-flex h-14 w-14 items-center justify-center rounded-[50%_50%_50%_18%] bg-deep-green !text-off-white shadow-lg shadow-deep-green/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-forest-green hover:!text-off-white"
+      className="focus-ring fixed bottom-5 right-5 z-20 inline-flex h-14 w-14 items-center justify-center rounded-[50%_50%_50%_18%] bg-deep-green !text-off-white shadow-lg shadow-white/35 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-forest-green hover:!text-off-white"
       href={href}
     >
       <svg aria-hidden="true" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
