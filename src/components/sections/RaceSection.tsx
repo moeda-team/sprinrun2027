@@ -29,8 +29,8 @@ const highlights = [
 ];
 
 const races = [
-  { distance: '10K', name: 'CHALLENGE RUN', flagOff: '04.45 WIB', category: 'Umum & *Master', image: '/images/race-10k-photo.jpg', alt: 'Sekelompok pelari berlari menjauh di jalan Kota Lama.' },
-  { distance: '5K', name: 'FUN RUN', flagOff: '05.15 WIB', category: 'Umum & *Master', image: '/images/race-5k-photo.jpg', alt: 'Lima pelari berlari bersama di kawasan Kota Lama.' },
+  { distance: '10K', name: 'CHALLENGE RUN', flagOff: '04.45 WIB', category: 'Open, Master & Master+', image: '/images/race-10k-photo.jpg', alt: 'Sekelompok pelari berlari menjauh di jalan Kota Lama.' },
+  { distance: '5K', name: 'FUN RUN', flagOff: '05.15 WIB', category: 'Open, Master & Master+', image: '/images/race-5k-photo.jpg', alt: 'Lima pelari berlari bersama di kawasan Kota Lama.' },
 ];
 
 function ArrowIcon() {
@@ -56,7 +56,7 @@ export function RaceSection() {
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-deep-green/45">RACE CATEGORY</p>
             <h2 className="font-display mt-7 text-[clamp(3.5rem,5vw,5rem)] uppercase italic leading-[0.78] tracking-[-0.04em] text-deep-green sm:text-[5rem]">CHOOSE<br />YOUR CHALLENGE</h2>
             <div className="mt-8 h-1 w-14 bg-hot-pink" />
-            <p className="body-copy mt-7 text-base leading-relaxed text-deep-green/70">Pilih kategori 10K atau 5K. Keduanya tersedia untuk peserta Umum dan Master.</p>
+            <p className="body-copy mt-7 text-base leading-relaxed text-deep-green/70">Pilih kategori 10K atau 5K. Keduanya tersedia untuk peserta Open, Master, dan Master+.</p>
             <a href="#registration" className="focus-ring group mt-8 inline-flex items-center gap-4 border-b-2 border-deep-green pb-2 font-bold text-deep-green transition-colors hover:border-hot-pink hover:text-hot-pink">Lihat Detail Race <ArrowIcon /></a>
           </div>
 
@@ -76,7 +76,9 @@ export function RaceSection() {
               </a>
             ))}
           </div>
-          <p className="mt-4 text-sm text-deep-green/60">*Master = usia 45+</p>
+          <p className="mt-4 text-sm text-deep-green/60">
+            Open = Under 40 tahun &nbsp;·&nbsp; Master = 40–50 tahun &nbsp;·&nbsp; Master+ = 50 tahun ke atas
+          </p>
           </div>
         </div>
       </Container>
