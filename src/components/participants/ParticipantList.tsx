@@ -25,7 +25,15 @@ type Registration = {
 };
 type RegistrationResponse = { data: Registration[]; total: number; page: number; page_size: number; total_pages: number };
 
-const pageSize = 6;
+const pageSizes = [12, 24, 36] as const;
+const classesByDistance = {
+  '5K': [{ label: 'Fun Run', value: 'Fun Run' }],
+  '10K': [
+    { label: 'Open', value: 'Open' },
+    { label: 'Master', value: 'Master' },
+    { label: 'Master+', value: 'Master + (50th and up)' },
+  ],
+} as const;
 
 function getParticipantCity(participant: Registration): string {
   if (Array.isArray(participant.custom_answers)) {
@@ -78,6 +86,9 @@ function getParticipantCity(participant: Registration): string {
 export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; eventId?: string }) {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState<number>(24);
+  const [distance, setDistance] = useState<keyof typeof classesByDistance | ''>('');
+  const [raceClass, setRaceClass] = useState('');
   const [result, setResult] = useState<RegistrationResponse | null>(null);
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const isConfigured = Boolean(apiBaseUrl && eventId);
@@ -92,6 +103,8 @@ export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; 
         url.searchParams.set('q', query.trim());
         url.searchParams.set('page', String(page));
         url.searchParams.set('page_size', String(pageSize));
+        if (distance) url.searchParams.set('category', distance);
+        if (raceClass) url.searchParams.set('age_class', raceClass);
         const response = await fetch(url, { signal: controller.signal });
         if (!response.ok) throw new Error(`API request failed: ${response.status}`);
         const payload: RegistrationResponse = await response.json();
@@ -103,7 +116,7 @@ export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; 
       }
     }, 300);
     return () => { window.clearTimeout(timer); controller.abort(); };
-  }, [apiBaseUrl, eventId, page, query]);
+  }, [apiBaseUrl, eventId, page, pageSize, query, distance, raceClass]);
 
   const totalPages = result?.total_pages ?? 1;
   return (
@@ -113,7 +126,30 @@ export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; 
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="pointer-events-none absolute left-8 top-1/2 h-5 w-5 -translate-y-1/2 text-deep-green/55 sm:left-9" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="6" /><path d="m16 16 4 4" /></svg>
         <input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="Cari nama, kategori, atau kabupaten/kota" className="focus-ring w-full rounded-2xl border border-line bg-paper py-3 pl-11 pr-4 text-sm text-deep-green placeholder:text-deep-green/45" type="search" />
       </label>
-      {status === 'ready' && result && <p className="mt-5 text-sm text-deep-green/65" aria-live="polite">Menampilkan <strong className="font-bold text-deep-green">{result.data.length}</strong> dari {result.total} peserta.</p>}
+      <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        {status === 'ready' && result ? <p className="text-sm text-deep-green/65" aria-live="polite">Menampilkan <strong className="font-bold text-deep-green">{result.data.length}</strong> dari {result.total} peserta.</p> : <span />}
+        <div className="flex flex-wrap items-center gap-3">
+          <label className="flex items-center gap-2 text-sm font-semibold text-deep-green/75">
+            <span>Jarak</span>
+            <select value={distance} onChange={(event) => { const next = event.target.value as keyof typeof classesByDistance | ''; setDistance(next); setRaceClass(''); setPage(1); }} className="focus-ring rounded-xl border border-line bg-off-white px-3 py-2 text-deep-green">
+              <option value="">Semua</option><option value="5K">5K</option><option value="10K">10K</option>
+            </select>
+          </label>
+          <label className="flex items-center gap-2 text-sm font-semibold text-deep-green/75">
+            <span>Kelas</span>
+            <select value={raceClass} onChange={(event) => { setRaceClass(event.target.value); setPage(1); }} disabled={!distance} className="focus-ring rounded-xl border border-line bg-off-white px-3 py-2 text-deep-green disabled:opacity-50">
+              <option value="">Semua</option>
+              {distance && classesByDistance[distance].map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
+            </select>
+          </label>
+          <label className="flex items-center gap-2 text-sm font-semibold text-deep-green/75">
+            <span>Per halaman</span>
+            <select value={pageSize} onChange={(event) => { setPageSize(Number(event.target.value)); setPage(1); }} className="focus-ring rounded-xl border border-line bg-off-white px-3 py-2 text-deep-green">
+              {pageSizes.map((size) => <option key={size} value={size}>{size}</option>)}
+            </select>
+          </label>
+        </div>
+      </div>
       <div className="mt-4 overflow-hidden rounded-3xl border border-line bg-off-white shadow-sm" aria-busy={status === 'loading'}>
         <div className="hidden grid-cols-[2fr_1fr_1.2fr] gap-4 border-b border-line bg-soft-mint/35 px-6 py-4 text-xs font-extrabold uppercase tracking-wider text-deep-green/65 sm:grid">
           <span>Peserta</span>
