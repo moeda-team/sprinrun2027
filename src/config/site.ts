@@ -6,9 +6,9 @@ export const site = {
   venue: 'Kantor Gubernur Jawa Tengah',
   routeMapUrl: 'https://www.google.com/maps/d/u/0/viewer?mid=1Mkbd0vRJXE_pEdxmBnrgOjVNJ-ZvfYA',
   routeStartMapUrl: 'https://www.google.com/maps/search/?api=1&query=-6.9947%2C110.420655',
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '6281227875478',
-  contactName: 'dr. Radith Aulia, Sp.OG',
-  contactPhone: '+62 812-2787-5478',
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '6285148351241',
+  contactName: 'Wisnu Wardana',
+  contactPhone: '+62 851-4835-1241',
   whatsappMessage: 'Halo, saya ingin mengetahui lebih lanjut tentang SPRIN RUN 2027.',
   registrationUrl: 'https://www.lowkeythings.my.id/events/7974e196-52c5-4f77-830e-4d24c6250dfe',
   labels: {
