@@ -12,9 +12,9 @@ Semua query parameter bersifat opsional:
 
 | Parameter | Tipe | Default | Keterangan |
 | --- | --- | --- | --- |
-| `q` | string | kosong | Pencarian nama, kategori, atau kabupaten/kota. |
+| `q` | string | kosong | Pencarian substring tanpa membedakan huruf besar/kecil pada nama peserta dan kategori. |
 | `page` | integer | `1` | Nomor halaman, dimulai dari 1. |
-| `page_size` | integer atau string | `all` | Jumlah item per halaman. Terima `12`, `24`, `36`, atau `all`. `all` mengembalikan seluruh hasil setelah filter dan pencarian, tanpa pembatasan pagination. |
+| `page_size` | integer atau string | `24` | Jumlah item per halaman. Terima `12`, `24`, `36`, atau `all`. `all` mengembalikan seluruh hasil setelah filter dan pencarian, tanpa pembatasan pagination. |
 | `category` | string | semua kategori | Nama kategori persis, saat ini `5K` atau `10K`. |
 | `age_class` | string | semua kelas | Nilai kelas persis sebagaimana tersimpan. Berlaku untuk kelas pada kategori yang dipilih. |
 
@@ -23,8 +23,8 @@ Kombinasi kategori dan kelas yang tersedia:
 | `category` | Label di UI (`age_class`) | Nilai `age_class` |
 | --- | --- | --- |
 | `5K` | Fun Run | `Fun Run` |
-| `10K` | Open | `Open` |
-| `10K` | Master | `Master` |
+| `10K` | Open | `Open (Under 40th)` |
+| `10K` | Master | `Master (40th to before 50th)` |
 | `10K` | Master+ | `Master + (50th and up)` |
 
 Filter `category` dan `age_class` harus diterapkan di server sebelum menghitung `total` dan membagi halaman. Jika `age_class` diberikan tanpa `category`, server dapat menolaknya dengan `400 invalid_filter`.
@@ -55,7 +55,7 @@ Status `200 OK`:
 ## Validasi dan error
 
 - `page` harus bilangan bulat positif.
-- `page_size` harus salah satu dari `12`, `24`, `36`, atau `all`. Jika dihilangkan, gunakan `all`.
+- `page_size` harus salah satu dari `12`, `24`, `36`, atau `all`. Jika dihilangkan, gunakan `24`.
 - `category` harus salah satu dari `5K` atau `10K`.
 - `age_class` harus cocok dengan kategori menurut tabel di atas.
 - Parameter tidak valid menghasilkan `400 Bad Request` dengan bentuk berikut:
@@ -70,5 +70,5 @@ Status `200 OK`:
 ## Contoh
 
 ```http
-GET /api/v1/events/sprin-run-2027/paid-registrations?category=10K&age_class=Master%20%2B%20%2850th%20and%20up%29&page=1&page_size=all
+GET /api/v1/events/sprin-run-2027/paid-registrations?category=10K&age_class=Master%20%2B%20%2850th%20and%20up%29&page=1&page_size=24
 ```

@@ -29,8 +29,8 @@ const pageSizes = ['all', '12', '24', '36'] as const;
 const classesByDistance = {
   '5K': [{ label: 'Fun Run', value: 'Fun Run' }],
   '10K': [
-    { label: 'Open', value: 'Open' },
-    { label: 'Master', value: 'Master' },
+    { label: 'Open', value: 'Open (Under 40th)' },
+    { label: 'Master', value: 'Master (40th to before 50th)' },
     { label: 'Master+', value: 'Master + (50th and up)' },
   ],
 } as const;
@@ -86,7 +86,7 @@ function getParticipantCity(participant: Registration): string {
 export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; eventId?: string }) {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState<(typeof pageSizes)[number]>('all');
+  const [pageSize, setPageSize] = useState<(typeof pageSizes)[number]>('24');
   const [distance, setDistance] = useState<keyof typeof classesByDistance | ''>('');
   const [raceClass, setRaceClass] = useState('');
   const [result, setResult] = useState<RegistrationResponse | null>(null);
@@ -122,9 +122,9 @@ export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; 
   return (
     <section aria-label="Daftar peserta" className="mt-10">
       <label className="relative block rounded-3xl border border-line bg-off-white p-4 shadow-sm sm:p-5">
-        <span className="sr-only">Cari peserta, kategori, atau kabupaten/kota</span>
+        <span className="sr-only">Cari nama atau kategori peserta</span>
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="pointer-events-none absolute left-8 top-1/2 h-5 w-5 -translate-y-1/2 text-deep-green/55 sm:left-9" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="6" /><path d="m16 16 4 4" /></svg>
-        <input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="Cari nama, kategori, atau kabupaten/kota" className="focus-ring w-full rounded-2xl border border-line bg-paper py-3 pl-11 pr-4 text-sm text-deep-green placeholder:text-deep-green/45" type="search" />
+        <input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="Cari nama atau kategori" className="focus-ring w-full rounded-2xl border border-line bg-paper py-3 pl-11 pr-4 text-sm text-deep-green placeholder:text-deep-green/45" type="search" />
       </label>
       <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         {status === 'ready' && result ? <p className="text-sm text-deep-green/65" aria-live="polite">Menampilkan <strong className="font-bold text-deep-green">{result.data.length}</strong> dari {result.total} peserta.</p> : <span />}
@@ -158,7 +158,7 @@ export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; 
         </div>
         {status === 'loading' && <div className="px-6 py-14 text-center text-sm text-deep-green/65">Memuat daftar peserta…</div>}
         {(!isConfigured || status === 'error') && <div className="px-6 py-14 text-center"><p className="font-bold text-deep-green">Daftar peserta belum dapat dimuat</p><p className="mt-2 text-sm text-deep-green/65">Silakan coba lagi beberapa saat lagi.</p></div>}
-        {status === 'ready' && result?.data.length === 0 && <div className="px-6 py-14 text-center"><p className="font-bold text-deep-green">Peserta tidak ditemukan</p><p className="mt-2 text-sm text-deep-green/65">Coba gunakan nama, kategori, atau kabupaten/kota lain.</p></div>}
+        {status === 'ready' && result?.data.length === 0 && <div className="px-6 py-14 text-center"><p className="font-bold text-deep-green">Peserta tidak ditemukan</p><p className="mt-2 text-sm text-deep-green/65">Coba gunakan nama atau kategori lain.</p></div>}
         {status === 'ready' && result && result.data.length > 0 && (
           <ul className="divide-y divide-line">
             {result.data.map((participant, index) => {
