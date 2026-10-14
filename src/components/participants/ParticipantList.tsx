@@ -129,9 +129,9 @@ export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; 
               const city = getParticipantCity(participant);
               return (
                 <li key={`${participant.name}-${participant.category}-${index}`} className="grid gap-2 px-5 py-5 sm:grid-cols-[2fr_1fr_1.2fr] sm:items-center sm:gap-4 sm:px-6">
-                  <p className="font-bold text-deep-green">{participant.name}</p>
-                  <p className="text-sm font-semibold text-deep-green"><span className="text-deep-green/60 sm:hidden">Kategori: </span>{participant.category}</p>
-                  <p className="text-sm font-medium text-deep-green"><span className="text-deep-green/60 sm:hidden">Kabupaten/Kota: </span>{city}</p>
+                  <p className="font-bold uppercase text-deep-green">{participant.name}</p>
+                  <p className="text-sm font-semibold uppercase text-deep-green"><span className="text-deep-green/60 sm:hidden">Kategori: </span>{participant.category}</p>
+                  <p className="text-sm font-medium uppercase text-deep-green"><span className="text-deep-green/60 sm:hidden">Kabupaten/Kota: </span>{city}</p>
                 </li>
               );
             })}
