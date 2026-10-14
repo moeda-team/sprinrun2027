@@ -23,9 +23,9 @@ type Registration = {
   extra_data?: Record<string, unknown>;
   [key: string]: unknown;
 };
-type RegistrationResponse = { data: Registration[]; total: number; page: number; page_size: number; total_pages: number };
+type RegistrationResponse = { data: Registration[]; total: number; page: number; page_size: number | 'all'; total_pages: number };
 
-const pageSizes = [12, 24, 36] as const;
+const pageSizes = ['all', '12', '24', '36'] as const;
 const classesByDistance = {
   '5K': [{ label: 'Fun Run', value: 'Fun Run' }],
   '10K': [
@@ -86,7 +86,7 @@ function getParticipantCity(participant: Registration): string {
 export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; eventId?: string }) {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState<number>(24);
+  const [pageSize, setPageSize] = useState<(typeof pageSizes)[number]>('all');
   const [distance, setDistance] = useState<keyof typeof classesByDistance | ''>('');
   const [raceClass, setRaceClass] = useState('');
   const [result, setResult] = useState<RegistrationResponse | null>(null);
@@ -102,7 +102,7 @@ export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; 
         const url = new URL(`/api/v1/events/${eventId}/paid-registrations`, apiBaseUrl);
         url.searchParams.set('q', query.trim());
         url.searchParams.set('page', String(page));
-        url.searchParams.set('page_size', String(pageSize));
+        url.searchParams.set('page_size', pageSize);
         if (distance) url.searchParams.set('category', distance);
         if (raceClass) url.searchParams.set('age_class', raceClass);
         const response = await fetch(url, { signal: controller.signal });
@@ -144,8 +144,8 @@ export function ParticipantList({ apiBaseUrl, eventId }: { apiBaseUrl?: string; 
           </label>
           <label className="flex items-center gap-2 text-sm font-semibold text-deep-green/75">
             <span>Per halaman</span>
-            <select value={pageSize} onChange={(event) => { setPageSize(Number(event.target.value)); setPage(1); }} className="focus-ring rounded-xl border border-line bg-off-white px-3 py-2 text-deep-green">
-              {pageSizes.map((size) => <option key={size} value={size}>{size}</option>)}
+            <select value={pageSize} onChange={(event) => { setPageSize(event.target.value as (typeof pageSizes)[number]); setPage(1); }} className="focus-ring rounded-xl border border-line bg-off-white px-3 py-2 text-deep-green">
+              {pageSizes.map((size) => <option key={size} value={size}>{size === 'all' ? 'Semua' : size}</option>)}
             </select>
           </label>
         </div>
