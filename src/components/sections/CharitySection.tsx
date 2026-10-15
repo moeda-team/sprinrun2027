@@ -9,7 +9,7 @@ const programs = [
   'Pemeriksaan kesehatan gratis',
 ];
 
-const ACCOUNT_NUMBER = '135-0013171762';
+const ACCOUNT_NUMBER = '135-0001317179';
 
 export function CharitySection() {
   const [copied, setCopied] = useState(false);
@@ -22,8 +22,14 @@ export function CharitySection() {
   }
 
   return (
-    <section id="charity" className="relative isolate overflow-hidden bg-forest-green py-16 text-off-white sm:py-24">
-      <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 -left-40 -z-10 h-[min(65vw,34rem)] w-[min(65vw,34rem)] rounded-full bg-hot-pink/20 blur-3xl" />
+    <section
+      id="charity"
+      className="relative isolate overflow-hidden bg-forest-green py-16 text-off-white sm:py-24"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-40 -left-40 -z-10 h-[min(65vw,34rem)] w-[min(65vw,34rem)] rounded-full bg-hot-pink/20 blur-3xl"
+      />
       <Container>
         {/* Top label row */}
         <div className="mb-10 flex items-center justify-between" data-reveal>
@@ -36,18 +42,17 @@ export function CharitySection() {
 
         {/* Main two-column grid */}
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16" data-reveal>
-
           {/* ── LEFT column ── */}
           <div>
             {/* Big headline */}
             <h2 className="font-display text-[clamp(3.2rem,7vw,6rem)] uppercase italic leading-[.88] tracking-[-.04em]">
-              SETIAP LANGKAH DAPAT MENJADI{' '}
-              <span className="text-hot-pink">KEBAIKAN</span>{' '}
-              YANG LEBIH BESAR
+              SETIAP LANGKAH DAPAT MENJADI <span className="text-hot-pink">KEBAIKAN</span> YANG
+              LEBIH BESAR
             </h2>
 
             <p className="body-copy mt-7 max-w-xl text-base leading-relaxed text-off-white/75">
-              Melalui program charity, masyarakat dapat memberikan dukungan tambahan untuk membantu rangkaian kegiatan sosial dan kesehatan dalam semangat BELA KARTINI, termasuk:
+              Melalui program charity, masyarakat dapat memberikan dukungan tambahan untuk membantu
+              rangkaian kegiatan sosial dan kesehatan dalam semangat BELA KARTINI, termasuk:
             </p>
 
             {/* Numbered program list */}
@@ -57,7 +62,9 @@ export function CharitySection() {
                   <span className="font-display w-8 shrink-0 text-lg italic leading-none text-hot-pink">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <span className="text-sm font-semibold text-off-white/90 sm:text-base">{program}</span>
+                  <span className="text-sm font-semibold text-off-white/90 sm:text-base">
+                    {program}
+                  </span>
                 </li>
               ))}
             </ol>
@@ -70,7 +77,9 @@ export function CharitySection() {
               aria-labelledby="charity-donate-title"
               className="rounded-2xl bg-off-white p-6 text-deep-green shadow-xl shadow-night-green/25 sm:p-8"
             >
-              <p className="text-xs font-bold uppercase tracking-[.3em] text-hot-pink">BERGERAK BERSAMA</p>
+              <p className="text-xs font-bold uppercase tracking-[.3em] text-hot-pink">
+                BERGERAK BERSAMA
+              </p>
               <h3
                 id="charity-donate-title"
                 className="font-display mt-3 text-4xl uppercase italic leading-[.9] text-deep-green sm:text-5xl"
@@ -93,7 +102,9 @@ export function CharitySection() {
               <div className="mt-4 flex items-center justify-between rounded-xl bg-deep-green px-5 py-4 text-off-white">
                 <div>
                   <p className="text-xs text-off-white/55">No. rekening</p>
-                  <p className="mt-0.5 text-2xl font-bold tracking-wide sm:text-3xl">{ACCOUNT_NUMBER}</p>
+                  <p className="mt-0.5 text-2xl font-bold tracking-wide sm:text-3xl">
+                    {ACCOUNT_NUMBER}
+                  </p>
                 </div>
                 <button
                   onClick={handleCopy}
@@ -119,15 +130,20 @@ export function CharitySection() {
                 TIDAK HARUS BESAR UNTUK BERARTI.
               </p>
               <p className="body-copy mt-4 max-w-md text-sm leading-relaxed text-off-white/65 sm:text-base">
-                Ketika dilakukan bersama, langkah kecil dapat menjadi dukungan berarti bagi mereka yang membutuhkan.
+                Ketika dilakukan bersama, langkah kecil dapat menjadi dukungan berarti bagi mereka
+                yang membutuhkan.
               </p>
             </div>
           </div>
         </div>
 
         {/* Footer note */}
-        <p className="body-copy mt-14 border-t border-off-white/15 pt-5 text-sm leading-relaxed text-off-white/50" data-reveal>
-          Setiap donasi akan menjadi bagian dari dukungan terhadap rangkaian program charity SPRIN RUN 2027.
+        <p
+          className="body-copy mt-14 border-t border-off-white/15 pt-5 text-sm leading-relaxed text-off-white/50"
+          data-reveal
+        >
+          Setiap donasi akan menjadi bagian dari dukungan terhadap rangkaian program charity SPRIN
+          RUN 2027.
         </p>
       </Container>
     </section>
