@@ -1,12 +1,19 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 
 const programs = [
-  'Program kesehatan perempuan',
-  'Pembagian vaksin',
-  'Pemeriksaan kesehatan gratis',
+  {
+    label: 'Program kesehatan perempuan',
+    icon: 'M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z',
+  },
+  {
+    label: 'Pembagian vaksin',
+    icon: 'm18 2 4 4M17 7l3-3M19 9l-8.7 8.7a2.8 2.8 0 0 1-4 0l-.9-.9a2.8 2.8 0 0 1 0-4L14 4M5 19l-3 3M14 7l3 3M10 11l3 3',
+  },
+  { label: 'Pemeriksaan kesehatan gratis', icon: 'M3 12h4l3-8 4 16 3-8h4' },
 ];
 
 const ACCOUNT_NUMBER = '135-0001317179';
@@ -32,108 +39,126 @@ export function CharitySection() {
       />
       <Container>
         {/* Top label row */}
-        <div className="mb-10 flex items-center justify-between" data-reveal>
+        <div
+          className="mb-8 flex flex-col items-start gap-1 text-sm sm:flex-row sm:items-center sm:justify-between"
+          data-reveal
+        >
           <p className="text-xs font-bold uppercase tracking-[.35em] text-soft-mint">
             <span className="mr-2 inline-block h-2 w-2 rounded-full bg-hot-pink align-middle" />
-            SPRIN RUN 2027 · CHARITY
+            Sprin Run 2027 Charity
           </p>
-          <p className="hidden text-sm text-off-white/50 sm:block">Semangat BELA KARTINI</p>
+          <p className="text-sm text-off-white/65">Semangat BELA KARTINI</p>
         </div>
 
         {/* Main two-column grid */}
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16" data-reveal>
+        <div className="grid items-stretch gap-9 lg:grid-cols-[1.1fr_.9fr] lg:gap-14" data-reveal>
           {/* ── LEFT column ── */}
-          <div>
+          <div className="flex flex-col">
             {/* Big headline */}
-            <h2 className="font-display text-[clamp(3.2rem,7vw,6rem)] uppercase italic leading-[.88] tracking-[-.04em]">
-              SETIAP LANGKAH DAPAT MENJADI <span className="text-hot-pink">KEBAIKAN</span> YANG
-              LEBIH BESAR
+            <h2 className="font-display text-[clamp(2.8rem,7vw,5.6rem)] uppercase leading-[.98] tracking-[.005em]">
+              Setiap langkah dapat menjadi{' '}
+              <span className="text-hot-pink">kebaikan yang lebih besar</span>
             </h2>
 
-            <p className="body-copy mt-7 max-w-xl text-base leading-relaxed text-off-white/75">
+            <p className="body-copy mt-7 max-w-xl text-base leading-relaxed text-off-white/70 sm:text-lg">
               Melalui program charity, masyarakat dapat memberikan dukungan tambahan untuk membantu
               rangkaian kegiatan sosial dan kesehatan dalam semangat BELA KARTINI, termasuk:
             </p>
 
-            {/* Numbered program list */}
-            <ol className="mt-8 divide-y divide-off-white/15 border-t border-off-white/15">
-              {programs.map((program, i) => (
-                <li key={program} className="flex items-center gap-5 py-4">
-                  <span className="font-display w-8 shrink-0 text-lg italic leading-none text-hot-pink">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="text-sm font-semibold text-off-white/90 sm:text-base">
-                    {program}
-                  </span>
+            <ul className="mt-2 flex max-w-xl flex-1 flex-col border-t border-off-white/15">
+              {programs.map((program) => (
+                <li
+                  key={program.label}
+                  className="flex min-h-[72px] flex-1 items-center gap-4 border-b border-off-white/15 py-4 text-base font-medium text-off-white/90 sm:text-lg"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                    className="h-11 w-11 shrink-0 rounded-[11px] bg-off-white/10 p-2.5 text-hot-pink"
+                  >
+                    <path d={program.icon} />
+                  </svg>
+                  {program.label}
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
 
           {/* ── RIGHT column ── */}
-          <div className="flex flex-col gap-8">
+          <div>
             {/* Donation card */}
             <aside
               aria-labelledby="charity-donate-title"
-              className="rounded-2xl bg-off-white p-6 text-deep-green shadow-xl shadow-night-green/25 sm:p-8"
+              className="rounded-2xl bg-off-white p-6 text-deep-green shadow-xl shadow-night-green/25 sm:rounded-3xl sm:p-8"
             >
-              <p className="text-xs font-bold uppercase tracking-[.3em] text-hot-pink">
-                BERGERAK BERSAMA
-              </p>
               <h3
                 id="charity-donate-title"
-                className="font-display mt-3 text-4xl uppercase italic leading-[.9] text-deep-green sm:text-5xl"
+                className="font-display text-4xl uppercase leading-none text-deep-green sm:text-5xl"
               >
                 MARI BERBAGI
               </h3>
-              <p className="body-copy mt-3 text-sm leading-relaxed text-deep-green/65 sm:text-base">
-                Salurkan donasi Anda melalui rekening resmi POGI Cabang Semarang di bawah ini.
+              <p className="body-copy mt-2 text-sm leading-relaxed text-deep-green/70 sm:text-base">
+                Salurkan donasi Anda melalui rekening resmi POGI Cabang Semarang.
               </p>
 
-              {/* Bank row */}
-              <div className="mt-6 border-t border-deep-green/15 pt-5">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-deep-green/55">Bank</span>
-                  <span className="font-bold">Bank Mandiri</span>
+              {/* QRIS first, as in the reference */}
+              <div className="mt-6">
+                <h4 className="mb-3 text-base font-bold">Donasi melalui QRIS</h4>
+                <div className="mx-auto w-full max-w-[250px] rounded-2xl border border-deep-green/10 bg-white p-[18px]">
+                  <Image
+                    src="/images/qris-charity.png"
+                    alt="Kode QRIS donasi POGI Cabang Semarang"
+                    width={1288}
+                    height={1289}
+                    sizes="250px"
+                    className="block h-auto w-full [image-rendering:pixelated]"
+                  />
                 </div>
-              </div>
-
-              {/* Account number pill */}
-              <div className="mt-4 flex items-center justify-between rounded-xl bg-deep-green px-5 py-4 text-off-white">
-                <div>
-                  <p className="text-xs text-off-white/55">No. rekening</p>
-                  <p className="mt-0.5 text-2xl font-bold tracking-wide sm:text-3xl">
-                    {ACCOUNT_NUMBER}
-                  </p>
-                </div>
-                <button
-                  onClick={handleCopy}
-                  className="ml-4 shrink-0 rounded-full bg-hot-pink px-5 py-2 text-sm font-bold text-off-white transition-all hover:brightness-110 active:scale-95"
-                  aria-label="Salin nomor rekening"
+                <p className="body-copy mt-3 text-center text-sm leading-relaxed text-deep-green/70">
+                  Buka aplikasi bank atau e-wallet, lalu pindai kode ini.
+                </p>
+                <a
+                  href="/images/qris-charity.png"
+                  download="qris-pogi-semarang.png"
+                  className="mt-3 block text-center text-sm font-bold text-hot-pink underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hot-pink"
                 >
-                  {copied ? 'Tersalin!' : 'Salin'}
-                </button>
+                  Unduh kode QRIS
+                </a>
               </div>
 
-              {/* Account name row */}
-              <div className="mt-4 border-t border-deep-green/15 pt-4">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-deep-green/55">Atas nama</span>
-                  <span className="font-bold">POGI Cabang Semarang</span>
+              {/* Bank transfer */}
+              <div className="mt-6 border-t border-deep-green/15 pt-5">
+                <h4 className="mb-1 text-base font-bold">Atau transfer bank</h4>
+                <div className="flex items-center justify-between gap-4 border-b border-deep-green/10 py-3 text-sm">
+                  <span className="text-deep-green/60">Bank</span>
+                  <strong className="text-right">Bank Mandiri</strong>
+                </div>
+                <div className="mt-4 flex items-center justify-between gap-3 rounded-2xl bg-deep-green px-4 py-4 text-off-white sm:px-5">
+                  <div className="min-w-0">
+                    <p className="text-xs text-off-white/65">No. rekening</p>
+                    <p className="mt-0.5 break-all text-xl font-bold tabular-nums tracking-wide sm:text-2xl">
+                      {ACCOUNT_NUMBER}
+                    </p>
+                  </div>
+                  <button
+                    onClick={handleCopy}
+                    className="min-h-11 shrink-0 rounded-full bg-hot-pink px-5 py-2 text-sm font-bold text-deep-green transition-colors hover:bg-hot-pink/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hot-pink"
+                    aria-label="Salin nomor rekening"
+                  >
+                    {copied ? 'Tersalin' : 'Salin'}
+                  </button>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-3 text-sm">
+                  <span className="text-deep-green/60">Atas nama</span>
+                  <strong className="text-right">POGI Cabang Semarang</strong>
                 </div>
               </div>
             </aside>
-
-            {/* Quote block */}
-            <div>
-              <p className="font-display text-[clamp(2rem,4.5vw,3.5rem)] uppercase italic leading-[.9] text-hot-pink">
-                TIDAK HARUS BESAR UNTUK BERARTI.
-              </p>
-              <p className="body-copy mt-4 max-w-md text-sm leading-relaxed text-off-white/65 sm:text-base">
-                Ketika dilakukan bersama, langkah kecil dapat menjadi dukungan berarti bagi mereka
-                yang membutuhkan.
-              </p>
-            </div>
           </div>
         </div>
 
@@ -142,8 +167,7 @@ export function CharitySection() {
           className="body-copy mt-14 border-t border-off-white/15 pt-5 text-sm leading-relaxed text-off-white/50"
           data-reveal
         >
-          Setiap donasi akan menjadi bagian dari dukungan terhadap rangkaian program charity SPRIN
-          RUN 2027.
+          Setiap donasi menjadi bagian dari dukungan untuk rangkaian program charity SPRIN RUN 2027.
         </p>
       </Container>
     </section>
