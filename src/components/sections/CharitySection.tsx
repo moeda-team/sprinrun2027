@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { createPortal } from 'react-dom';
 import { Container } from '@/components/ui/Container';
 
 const programs = [
@@ -20,6 +21,22 @@ const ACCOUNT_NUMBER = '135-0001317179';
 
 export function CharitySection() {
   const [copied, setCopied] = useState(false);
+  const [isQrExpanded, setIsQrExpanded] = useState(false);
+
+  useEffect(() => {
+    if (!isQrExpanded) return;
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') setIsQrExpanded(false);
+    }
+
+    document.addEventListener('keydown', closeOnEscape);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape);
+      document.body.style.overflow = '';
+    };
+  }, [isQrExpanded]);
 
   function handleCopy() {
     navigator.clipboard.writeText(ACCOUNT_NUMBER.replace(/-/g, '')).then(() => {
@@ -109,7 +126,13 @@ export function CharitySection() {
               {/* QRIS first, as in the reference */}
               <div className="mt-6">
                 <h4 className="mb-3 text-base font-bold">Donasi melalui QRIS</h4>
-                <div className="mx-auto w-full max-w-[250px] rounded-2xl border border-deep-green/10 bg-white p-[18px]">
+                <button
+                  type="button"
+                  onClick={() => setIsQrExpanded(true)}
+                  aria-label="Perbesar kode QRIS"
+                  aria-haspopup="dialog"
+                  className="mx-auto block w-full max-w-[250px] cursor-zoom-in rounded-2xl border border-deep-green/10 bg-white p-[18px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-hot-pink"
+                >
                   <Image
                     src="/images/qris-charity.png"
                     alt="Kode QRIS donasi POGI Cabang Semarang"
@@ -118,7 +141,7 @@ export function CharitySection() {
                     sizes="250px"
                     className="block h-auto w-full [image-rendering:pixelated]"
                   />
-                </div>
+                </button>
                 <p className="body-copy mt-3 text-center text-sm leading-relaxed text-deep-green/70">
                   Buka aplikasi bank atau e-wallet, lalu pindai kode ini.
                 </p>
@@ -170,6 +193,39 @@ export function CharitySection() {
           Setiap donasi menjadi bagian dari dukungan untuk rangkaian program charity SPRIN RUN 2027.
         </p>
       </Container>
+      {isQrExpanded &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Kode QRIS ukuran besar"
+            onClick={() => setIsQrExpanded(false)}
+            className="fixed inset-0 z-[100] grid place-items-center bg-black/60 p-4 backdrop-blur-sm"
+          >
+            <div className="relative" onClick={(event) => event.stopPropagation()}>
+              <button
+                type="button"
+                autoFocus
+                onClick={() => setIsQrExpanded(false)}
+                aria-label="Tutup gambar QRIS"
+                className="absolute -right-3 -top-3 z-10 grid h-11 w-11 place-items-center rounded-full bg-off-white text-deep-green shadow-lg hover:bg-soft-mint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hot-pink"
+              >
+                <span aria-hidden="true" className="text-2xl leading-none">
+                  ×
+                </span>
+              </button>
+              <Image
+                src="/images/qris-charity.png"
+                alt="Kode QRIS donasi POGI Cabang Semarang"
+                width={1288}
+                height={1289}
+                sizes="90vw"
+                className="max-h-[85vh] w-auto max-w-[90vw] rounded-2xl bg-white object-contain p-3 shadow-2xl"
+              />
+            </div>
+          </div>,
+          document.body,
+        )}
     </section>
   );
 }
