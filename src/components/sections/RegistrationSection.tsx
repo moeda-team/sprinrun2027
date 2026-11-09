@@ -16,7 +16,7 @@ const ticketGroups: TicketGroup[] = [
     prices: ['Rp200.000', 'Rp250.000'],
     soldOut: true,
   },
-  { name: 'Normal Umum', detail: 'Harga reguler', prices: ['Rp250.000', 'Rp300.000'] },
+  { name: 'Regular', detail: 'Harga reguler', prices: ['Rp250.000', 'Rp300.000'] },
   { name: 'SKP', detail: 'Khusus tenaga kesehatan', prices: ['Rp300.000', 'Rp350.000'], skp: true },
 ];
 
