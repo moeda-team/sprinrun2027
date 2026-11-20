@@ -21,6 +21,16 @@ const lifePhases = [
   },
 ];
 
+const SKP_PROFESSIONS = [
+  'Dokter Spesialis Obstetri dan Ginekologi',
+  'Dokter',
+  'Bidan Vokasi',
+  'Bidan Profesi',
+  'Perawat Vokasi',
+  'Ners',
+  'Tenaga Kesehatan Masyarakat',
+] as const;
+
 export function EventHighlightsSection() {
   return (
     <section id="about" className="bg-off-white pb-8 pt-16 text-deep-green sm:pb-12 sm:pt-24">
@@ -128,132 +138,62 @@ export function EventHighlightsSection() {
               </ul>
             </article>
 
-            {/* RIGHT COLUMN: BAGI PARA NAKES CARD */}
-            <article className="rounded-3xl bg-deep-green p-7 text-off-white sm:p-10 shadow-xl shadow-night-green/15 flex flex-col gap-6">
-              <div className="flex flex-col gap-3">
-                <p className="text-xs font-bold uppercase tracking-[.25em] text-soft-mint">
-                  UNTUK TENAGA KESEHATAN
+            {/* RIGHT COLUMN: BAGI PARA NAKES + BAGI MASYARAKAT UMUM */}
+            <div className="flex flex-col gap-6">
+              <article className="rounded-3xl bg-deep-green p-7 text-off-white sm:p-10 shadow-xl shadow-night-green/15 flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <p className="text-xs font-bold uppercase tracking-[.25em] text-soft-mint">
+                    UNTUK TENAGA KESEHATAN
+                  </p>
+                  <h3 className="font-display text-4xl uppercase italic leading-[.92] text-off-white sm:text-5xl">
+                    BAGI PARA NAKES
+                  </h3>
+                  <p className="body-copy text-sm sm:text-base leading-relaxed text-off-white/85">
+                    Program SKP Kemenkes adalah sistem pengumpulan Satuan Kredit Profesi dari
+                    Kementerian Kesehatan yang wajib dipenuhi oleh tenaga medis dan tenaga kesehatan
+                    sebagai syarat untuk memperpanjang Surat Izin Praktik (SIP). Nantinya ada kategori
+                    yang memilih SKP khusus tenaga kesehatan.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-4 pt-4 border-t border-white/20">
+                  <span className="font-display text-4xl sm:text-5xl italic leading-none text-white">
+                    {SKP_PROFESSIONS.length}
+                  </span>
+                  <span className="text-sm sm:text-base font-bold text-soft-mint">
+                    Profesi Tenaga Kesehatan yang bisa mendapatkan SKP yaitu profesi sbb:
+                  </span>
+                </div>
+
+                <ul className="flex flex-wrap gap-2 pt-1">
+                  {SKP_PROFESSIONS.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-full bg-white/10 px-3.5 py-2 text-xs sm:text-sm font-medium leading-tight text-off-white backdrop-blur-sm border border-white/10"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              {/* BAGI MASYARAKAT UMUM */}
+              <article className="rounded-3xl border-2 border-deep-green bg-soft-mint/25 p-7 sm:p-10 flex flex-col gap-4">
+                <div className="flex flex-col gap-2">
+                  <p className="text-xs font-bold uppercase tracking-[.25em] text-hot-pink">
+                    UNTUK SEMUA
+                  </p>
+                  <h3 className="font-display text-3xl uppercase italic leading-tight text-deep-green sm:text-4xl">
+                    BAGI MASYARAKAT UMUM
+                  </h3>
+                </div>
+                <p className="body-copy text-base sm:text-lg leading-relaxed text-deep-green/85">
+                  Event ini menjadi langkah konkret untuk ikut menyelamatkan perempuan Indonesia
+                  melalui edukasi reproduksi, vaksin HPV, persiapan kesehatan dan gizi sebelum
+                  kehamilan, hingga upaya menurunkan Angka Kematian Ibu (AKI).
                 </p>
-                <h3 className="font-display text-4xl uppercase italic leading-[.92] text-off-white sm:text-5xl">
-                  BAGI PARA NAKES
-                </h3>
-                <p className="body-copy text-sm sm:text-base leading-relaxed text-off-white/85">
-                  Program SKP Kemenkes adalah sistem pengumpulan Satuan Kredit Profesi dari
-                  Kementerian Kesehatan yang wajib dipenuhi oleh tenaga medis dan tenaga kesehatan
-                  sebagai syarat untuk memperpanjang Surat Izin Praktik (SIP). Nantinya ada kategori
-                  yang memilih SKP khusus tenaga kesehatan.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4 pt-4 border-t border-white/20">
-                <span className="font-display text-4xl sm:text-5xl italic leading-none text-white">
-                  17
-                </span>
-                <span className="text-sm sm:text-base font-bold text-soft-mint">
-                  Profesi Tenaga Kesehatan yang bisa mendapatkan SKP yaitu profesi sbb:
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-5 pt-1">
-                {/* Dokter Spesialis */}
-                <div className="flex flex-col gap-2.5">
-                  <span className="text-xs font-bold uppercase tracking-[.18em] text-soft-mint/90">
-                    Dokter Spesialis
-                  </span>
-                  <ul className="flex flex-wrap gap-2">
-                    {[
-                      'Dokter Spesialis Obstetri dan Ginekologi',
-                      'Dokter Spesialis Penyakit Dalam',
-                      'Dokter Spesialis Bedah',
-                      'Dokter Spesialis Anestesiologi dan Terapi Intensif',
-                      'Dokter Spesialis Patologi Klinik',
-                      'Dokter Spesialis Patologi Anatomi',
-                      'Dokter Gigi Spesialis Bedah Mulut dan Maksilofasial',
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-full bg-white/10 px-3.5 py-2 text-xs sm:text-sm font-medium leading-tight text-off-white backdrop-blur-sm border border-white/10"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Dokter */}
-                <div className="flex flex-col gap-2.5">
-                  <span className="text-xs font-bold uppercase tracking-[.18em] text-soft-mint/90">
-                    Dokter
-                  </span>
-                  <ul className="flex flex-wrap gap-2">
-                    {['Dokter', 'Dokter Gigi'].map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-full bg-white/10 px-3.5 py-2 text-xs sm:text-sm font-medium leading-tight text-off-white backdrop-blur-sm border border-white/10"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Kebidanan & Keperawatan */}
-                <div className="flex flex-col gap-2.5">
-                  <span className="text-xs font-bold uppercase tracking-[.18em] text-soft-mint/90">
-                    Kebidanan &amp; Keperawatan
-                  </span>
-                  <ul className="flex flex-wrap gap-2">
-                    {['Bidan Vokasi', 'Bidan Profesi', 'Perawat Vokasi', 'Ners'].map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-full bg-white/10 px-3.5 py-2 text-xs sm:text-sm font-medium leading-tight text-off-white backdrop-blur-sm border border-white/10"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Penunjang */}
-                <div className="flex flex-col gap-2.5">
-                  <span className="text-xs font-bold uppercase tracking-[.18em] text-soft-mint/90">
-                    Penunjang
-                  </span>
-                  <ul className="flex flex-wrap gap-2">
-                    {[
-                      'Tenaga Teknologi Laboratorium Medik',
-                      'Apoteker',
-                      'Psikolog Klinis',
-                      'Penata Anestesi',
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-full bg-white/10 px-3.5 py-2 text-xs sm:text-sm font-medium leading-tight text-off-white backdrop-blur-sm border border-white/10"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </article>
-
-            {/* FULL-WIDTH BOTTOM BAND: BAGI MASYARAKAT UMUM */}
-            <article className="lg:col-span-2 rounded-3xl border-2 border-deep-green bg-soft-mint/25 p-7 sm:p-10 grid gap-5 lg:grid-cols-[1fr_1.3fr] lg:items-center">
-              <div className="flex flex-col gap-2">
-                <p className="text-xs font-bold uppercase tracking-[.25em] text-hot-pink">
-                  UNTUK SEMUA
-                </p>
-                <h3 className="font-display text-3xl uppercase italic leading-tight text-deep-green sm:text-4xl">
-                  BAGI MASYARAKAT UMUM
-                </h3>
-              </div>
-              <p className="body-copy text-base sm:text-lg leading-relaxed text-deep-green/85">
-                Event ini menjadi langkah konkret untuk ikut menyelamatkan perempuan Indonesia
-                melalui edukasi reproduksi, vaksin HPV, persiapan kesehatan dan gizi sebelum
-                kehamilan, hingga upaya menurunkan Angka Kematian Ibu (AKI).
-              </p>
-            </article>
+              </article>
+            </div>
           </div>
         </div>
         <div
